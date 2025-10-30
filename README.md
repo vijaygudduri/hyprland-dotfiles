@@ -15,6 +15,10 @@ Install cliphist for clipboard manager (sudo pacman -S cliphist), the exec-once 
 Install sugar-candy theme for sddm and catppuccin, tokyo night gtk themes and tela dracula icon theme (paru -S sddm-sugar-candy-git tokyonight-gtk-theme-git catppuccin-gtk-theme-mocha tela-circle-icon-theme-dracula)
 Apply gtk theme and icon theme from nwg-look (GTK Settings) app
 To apply sugar-candy theme on sddm, add below in /etc/sddm.conf.d/sddm.conf file, if the file doesn't exist by default then create one
-<pre> ```ini [General] Numlock=on [Theme] Current=sugar-candy ``` </pre>
+[General]
+Numlock=on
+
+[Theme]
+Current=sugar-candy
 
 Copy brave-browser.desktop file from /usr/share/applications to ~/.local/share/applications and add the below flags in exec line
