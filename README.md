@@ -46,3 +46,10 @@ Copy brave-browser.desktop file from /usr/share/applications to ~/.local/share/a
 
       Exec=brave --enable-features=VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE,UseOzonePlatform --ozone-platform=x11 --ignore-gpu-blocklist --enable-gpu-rasterization --password-store=gnome %U
 
+For workspace autoswitch, save autoswitch.sh script in ~/.config/hypr/scripts directory and make it executable with below command, then save hypr-autoswitch.service file in ~/.config/systemd/user directory and enable the service
+
+      chmod +x ~/.config/hypr/scripts/autoswitch.sh
+
+      systemctl --user daemon-reload
+
+      systemctl --user enable hypr-autoswitch.service
