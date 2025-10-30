@@ -59,3 +59,5 @@ For workspace autoswitch, save autoswitch.sh script in ~/.config/hypr/scripts di
 Save Battery notification script in ~/.config/hypr/scripts and make it executable, the exec-once for the script is added in config
 
       chmod +x ~/.config/hypr/scripts/battery-notify.sh
+
+To decrease boot order timeout prompt of systemd while rebooting, switch to root and change timeout to 2 (or 0 to disable completly) in /boot/loader/loader.conf
