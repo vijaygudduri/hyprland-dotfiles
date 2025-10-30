@@ -30,9 +30,9 @@ Install cliphist for clipboard manager, the exec-once are added in config
 
       sudo pacman -S cliphist
 
-Install sugar-candy theme for sddm and catppuccin, tokyo night gtk themes and tela dracula icon theme
+Install sugar-candy theme for sddm and catppuccin, tokyo night gtk themes and tela dracula icon theme and bibata cursor theme(the config is added for bibata-modern-ice cursor)
 
-      paru -S sddm-sugar-candy-git tokyonight-gtk-theme-git catppuccin-gtk-theme-mocha tela-circle-icon-theme-dracula
+      paru -S sddm-sugar-candy-git tokyonight-gtk-theme-git catppuccin-gtk-theme-mocha tela-circle-icon-theme-dracula bibata-cursor-theme
       
 Apply gtk theme and icon theme from nwg-look (GTK Settings) app
 
