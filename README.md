@@ -55,3 +55,7 @@ For workspace autoswitch, save autoswitch.sh script in ~/.config/hypr/scripts di
       systemctl --user daemon-reload
 
       systemctl --user enable hypr-autoswitch.service
+
+Save Battery notification script in ~/.config/hypr/scripts and make it executable, the exec-once for the script is added in config
+
+      chmod +x ~/.config/hypr/scripts/battery-notify.sh
