@@ -12,16 +12,28 @@ Install hyprpanel and configure it, exec-once for hyprpanel is added in config
       paru -S ags-hyprpanel-git
       paru -S --needed aylurs-gtk-shell-git wireplumber libgtop bluez bluez-utils btop networkmanager dart-sass wl-clipboard brightnessctl swww python upower pacman-contrib power-profiles-daemon gvfs gtksourceview3 libsoup3 grimblast-git wf-recorder-git hyprpicker matugen-bin python-gpustat hyprsunset-git
 
-Install gnome polkit (authentication agent) and gnome keyring (password store) (sudo pacman -S polkit-gnome gnome-keyring), the exec-once for polkit is added in config, and the autostart for keyring is added in autostart.conf file
+Install gnome polkit (authentication agent) and gnome keyring (password store), the exec-once for polkit is added in config, and the autostart for keyring is added in autostart.conf file
 
-Install xdg-desktop-portal-hyprland (sudo pacman -S xdg-desktop-portal-hyprland), the env's are added in config
+      sudo pacman -S polkit-gnome gnome-keyring
 
-Install hypridle, hyprlock, hyprpaper (sudo pacman -S hypridle hyprlock hyprpaper), the config files and exec-once are added
+Install xdg-desktop-portal-hyprland, the env's are added in config
 
-Install cliphist for clipboard manager (sudo pacman -S cliphist), the exec-once are added in config
+      sudo pacman -S xdg-desktop-portal-hyprland
 
-Install sugar-candy theme for sddm and catppuccin, tokyo night gtk themes and tela dracula icon theme (paru -S sddm-sugar-candy-git tokyonight-gtk-theme-git catppuccin-gtk-theme-mocha tela-circle-icon-theme-dracula)
+Install hypridle, hyprlock, hyprpaper, the config files and exec-once are added
+
+      sudo pacman -S hypridle hyprlock hyprpaper
+
+Install cliphist for clipboard manager, the exec-once are added in config
+
+      sudo pacman -S cliphist
+
+Install sugar-candy theme for sddm and catppuccin, tokyo night gtk themes and tela dracula icon theme
+
+      paru -S sddm-sugar-candy-git tokyonight-gtk-theme-git catppuccin-gtk-theme-mocha tela-circle-icon-theme-dracula
+      
 Apply gtk theme and icon theme from nwg-look (GTK Settings) app
+
 To apply sugar-candy theme on sddm, add below in /etc/sddm.conf.d/sddm.conf file, if the file doesn't exist by default then create one
       
       [General]
