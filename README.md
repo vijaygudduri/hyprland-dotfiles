@@ -3,9 +3,14 @@ Install sddm and enable it, and install kitty
       sudo pacman -S sddm kitty
       systemctl enable sddm
 
-Install nwg-drawer and nwg-look (sudo pacman -S nwg-drawer nwg-look), the keybind SUPER+D is added in config for nwg-drawer
+Install nwg-drawer and nwg-look, the keybind SUPER+D is added in config for nwg-drawer
+      
+      sudo pacman -S nwg-drawer nwg-look
 
 Install hyprpanel and configure it, exec-once for hyprpanel is added in config
+
+      paru -S ags-hyprpanel-git
+      paru -S --needed aylurs-gtk-shell-git wireplumber libgtop bluez bluez-utils btop networkmanager dart-sass wl-clipboard brightnessctl swww python upower pacman-contrib power-profiles-daemon gvfs gtksourceview3 libsoup3 grimblast-git wf-recorder-git hyprpicker matugen-bin python-gpustat hyprsunset-git
 
 Install gnome polkit (authentication agent) and gnome keyring (password store) (sudo pacman -S polkit-gnome gnome-keyring), the exec-once for polkit is added in config, and the autostart for keyring is added in autostart.conf file
 
