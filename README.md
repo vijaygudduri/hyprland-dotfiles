@@ -23,3 +23,6 @@ To apply sugar-candy theme on sddm, add below in /etc/sddm.conf.d/sddm.conf file
       Current=sugar-candy
 
 Copy brave-browser.desktop file from /usr/share/applications to ~/.local/share/applications and add the below flags in exec line
+
+      Exec=brave --enable-features=VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE,UseOzonePlatform --ozone-platform=x11 --ignore-gpu-blocklist --enable-gpu-rasterization --password-store=gnome %U
+
