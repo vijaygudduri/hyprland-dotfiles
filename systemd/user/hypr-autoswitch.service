@@ -1,0 +1,14 @@
+[Unit]
+Description=Hyprland Autoswitch Workspaces
+After=graphical.target
+Wants=graphical.target
+
+[Service]
+Type=simple
+ExecStart=%h/.config/hypr/scripts/autoswitch.sh
+ExecStartPre=/bin/sleep 5
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
