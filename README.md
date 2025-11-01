@@ -14,7 +14,7 @@ Install hyprpanel and paste the config file content in ~/.config/hyprpanel/confi
       
       paru -S --needed aylurs-gtk-shell-git wireplumber libgtop bluez bluez-utils btop networkmanager dart-sass wl-clipboard brightnessctl swww python upower pacman-contrib power-profiles-daemon gvfs gtksourceview3 libsoup3 grimblast-git wf-recorder-git hyprpicker matugen-bin python-gpustat hyprsunset-git
 
-Install gnome polkit (authentication agent) and gnome keyring (password store), the exec-once for polkit is added in config, and the autostart for keyring is added in autostart.conf file
+Install gnome polkit (authentication agent) and gnome keyring (password store), the exec-once for polkit and keyring are added in config
 
       sudo pacman -S polkit-gnome gnome-keyring
 
