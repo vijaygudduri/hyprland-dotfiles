@@ -7,14 +7,12 @@ if ! flock -n 9; then
     exit 0
 fi
 
-# Battery notification script with fixed argument parsing and improved icon usage
-
 # Default configuration (can override via environment variables)
 battery_full_threshold=${BATTERY_NOTIFY_THRESHOLD_FULL:-100}
 battery_critical_threshold=${BATTERY_NOTIFY_THRESHOLD_CRITICAL:-5}
 unplug_charger_threshold=${BATTERY_NOTIFY_THRESHOLD_UNPLUG:-80}
 battery_low_threshold=${BATTERY_NOTIFY_THRESHOLD_LOW:-20}
-timer=${BATTERY_NOTIFY_TIMER:-120}          # Seconds before executing critical action
+timer=${BATTERY_NOTIFY_TIMER:-200}          # Seconds before executing critical action
 notify_interval_minutes=${BATTERY_NOTIFY_NOTIFY:-1140} # Minutes between 'Battery Full' notifications
 interval=${BATTERY_NOTIFY_INTERVAL:-5}      # Percentage steps for low/unplug notifications
 execute_critical=${BATTERY_NOTIFY_EXECUTE_CRITICAL:-"systemctl suspend"}
