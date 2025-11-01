@@ -1,0 +1,9 @@
+{
+  "custom/netspeed": {
+    "icon": "↑↓",
+    "label": "{}",
+    "tooltip": "Current upload/download speed (higher one)",
+    "execute": "/home/vijay/.config/hypr/scripts/hyprpanel-custom-netspeed.sh",
+    "interval": 1000
+  }
+}
