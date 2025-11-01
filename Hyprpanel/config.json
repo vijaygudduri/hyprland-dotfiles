@@ -35,6 +35,14 @@
   "theme.bar.opacity": 80,
   "bar.workspaces.applicationIconMap": {
     "Brave-browser": "🦁",
-    "smplayer": ""
+    "smplayer": "",
+    "libreoffice*": "",
+    "org.gnome.TextEditor": "󱩼",
+    "blueman-manager": "󰂯",
+    "org.gnome.Calculator": "",
+    "org.gnome.clocks": "",
+    "com.transmissionbt.transmission_40_618553": "󰦗",
+    "zoom": "",
+    "nm-connection-editor":"󱤚"
   }
 }
