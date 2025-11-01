@@ -17,6 +17,7 @@
         "battery"
       ],
       "right": [
+        "custom/netspeed",
         "network",
         "hyprsunset",
         "bluetooth",
@@ -32,7 +33,6 @@
   "bar.clock.format": "%a %b %d  %I:%M %p",
   "theme.bar.buttons.style": "wave",
   "theme.bar.opacity": 80,
-  "wallpaper.enable": false,
   "bar.workspaces.applicationIconMap": {
     "Brave-browser": "🦁"
   }
