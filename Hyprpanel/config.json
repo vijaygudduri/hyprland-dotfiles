@@ -34,6 +34,7 @@
   "theme.bar.buttons.style": "wave",
   "theme.bar.opacity": 80,
   "bar.workspaces.applicationIconMap": {
-    "Brave-browser": "🦁"
+    "Brave-browser": "🦁",
+    "smplayer": ""
   }
 }
