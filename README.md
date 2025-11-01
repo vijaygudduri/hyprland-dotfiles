@@ -61,3 +61,8 @@ Save Battery notification script in ~/.config/hypr/scripts and make it executabl
       chmod +x ~/.config/hypr/scripts/battery-notify.sh
 
 To decrease boot order timeout prompt of systemd while rebooting, switch to root and change timeout to 2 (or 0 to disable completly) in /boot/loader/loader.conf
+
+Currently installed apps
+
+      sudo pacman -S brave-bin network-manager-applet gnome-calculator gnome-text-editor gnome-clocks blueman nautilus libreoffice-fresh telegram-desktop transmission-gtk vlc 
+      paru -S visual-studio-code-bin zoom
