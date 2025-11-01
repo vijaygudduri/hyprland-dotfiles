@@ -1,0 +1,39 @@
+{
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
+  "theme.font.size": "1rem",
+  "theme.font.weight": 500,
+  "bar.layouts": {
+    "0": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "volume",
+        "clock",
+        "battery"
+      ],
+      "right": [
+        "network",
+        "hyprsunset",
+        "bluetooth",
+        "systray",
+        "notifications",
+        "power"
+      ]
+    }  
+  },
+  "bar.workspaces.showWsIcons": true,
+  "bar.workspaces.showApplicationIcons": true,
+  "menus.power.confirmation": false,
+  "bar.clock.format": "%a %b %d  %I:%M %p",
+  "theme.bar.buttons.style": "wave",
+  "theme.bar.opacity": 80,
+  "wallpaper.enable": false,
+  "bar.workspaces.applicationIconMap": {
+    "Brave-browser": "🦁"
+  }
+}
