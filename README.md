@@ -8,7 +8,7 @@ Install nwg-drawer and nwg-look, the keybind SUPER+D is added in config for nwg-
       
       sudo pacman -S nwg-drawer nwg-look
 
-Install hyprpanel and paste the config file content in ~/.config/hyprpanel/config.jsonc, exec-once for hyprpanel is added in config
+Install hyprpanel and paste the config file content in ~/.config/hyprpanel/config.jsonc, exec-once for hyprpanel is added in config. For custom netspeed, the script is added, make it executable.
 
       paru -S ags-hyprpanel-git
       
