@@ -2,7 +2,7 @@ Install sddm and enable it, and install kitty
 
       sudo pacman -S sddm kitty
       
-      systemctl enable sddm
+      sudo systemctl enable sddm
 
 Install nwg-drawer and nwg-look, the keybind SUPER+D is added in config for nwg-drawer
       
