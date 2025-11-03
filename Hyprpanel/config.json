@@ -21,11 +21,10 @@
         "network",
         "hyprsunset",
         "bluetooth",
-        "systray",
         "notifications",
         "power"
       ]
-    }  
+    }
   },
   "bar.workspaces.showWsIcons": true,
   "bar.workspaces.showApplicationIcons": true,
@@ -33,6 +32,7 @@
   "bar.clock.format": "%a %b %d  %I:%M %p",
   "theme.bar.buttons.style": "wave",
   "theme.bar.opacity": 80,
+  "wallpaper.enable": false,
   "bar.workspaces.applicationIconMap": {
     "Brave-browser": "",
     "smplayer": "",
@@ -44,6 +44,8 @@
     "com.transmissionbt.transmission*": "󰦗",
     "zoom": "",
     "nm-connection-editor": "󱤚",
-    "nwg-look":"󰁨"
-  }
+    "nwg-look": "󰁨"
+  },
+  "bar.network.rightClick": "nm-connection-editor",
+  "bar.bluetooth.rightClick": "blueman-manager"
 }
