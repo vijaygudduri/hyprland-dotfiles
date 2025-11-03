@@ -44,7 +44,8 @@
     "com.transmissionbt.transmission*": "󰦗",
     "zoom": "",
     "nm-connection-editor": "󱤚",
-    "nwg-look": "󰁨"
+    "nwg-look": "󰁨",
+    "org.gnome.Evince":"󱔘"
   },
   "bar.network.rightClick": "nm-connection-editor",
   "bar.bluetooth.rightClick": "blueman-manager"
