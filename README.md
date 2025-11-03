@@ -66,3 +66,7 @@ Currently installed apps
 
       sudo pacman -S brave-bin network-manager-applet gnome-calculator gnome-text-editor gnome-clocks blueman nautilus libreoffice-fresh telegram-desktop transmission-gtk smplayer swappy evince
       paru -S visual-studio-code-bin zoom
+
+Install gnome polkit (authentication agent) and gnome keyring (password store), the exec-once for polkit and keyring are added in config
+```bash
+sudo pacman -S polkit-gnome gnome-keyring
