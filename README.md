@@ -1,12 +1,12 @@
-1. **Install sddm and enable it, and install kitty**
+1.  **Install sddm and enable it, and install kitty**
 
-```bash
-sudo pacman -S sddm kitty
-```
+      ```bash
+      sudo pacman -S sddm kitty
+      ```
 
-```bash   
-sudo systemctl enable sddm
-```
+      ```bash   
+      sudo systemctl enable sddm
+      ```
 
 2. **Install nwg-drawer and nwg-look, the keybind SUPER+D is added in config for nwg-drawer**
 
