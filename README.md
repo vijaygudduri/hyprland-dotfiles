@@ -70,3 +70,36 @@ sudo pacman -S brave-bin network-manager-applet gnome-calculator gnome-text-edit
 paru -S visual-studio-code-bin zoom
 ```
 
+1.  **Install SDDM and Kitty.**
+    Install the SDDM Display Manager and the Kitty terminal emulator.
+
+    ```bash
+    sudo pacman -S sddm kitty
+    ```
+
+2.  **Enable SDDM.**
+    Enable the display manager to start automatically on boot.
+
+    ```bash
+    sudo systemctl enable sddm
+    ```
+
+3.  **Install `nwg-drawer` and `nwg-look`.**
+    The keybind `SUPER+D` is added in config for nwg-drawer.
+
+    ```bash
+    sudo pacman -S nwg-drawer nwg-look
+    ```
+
+4.  **Install `hyprpanel` and Dependencies.**
+    Install `hyprpanel` via the AUR. Paste the config file content into `~/.config/hyprpanel/config.jsonc`. (The `exec-once` is added in config.)
+
+    ```bash
+    paru -S ags-hyprpanel-git
+    ```
+
+5.  **Install a Batch of Dependencies.**
+
+    ```bash
+    paru -S --needed aylurs-gtk-shell-git wireplumber libgtop bluez bluez-utils btop networkmanager dart-sass wl-clipboard brightnessctl swww python upower pacman-contrib power-profiles-daemon gvfs gtksourceview3 libsoup3 grimblast-git wf-recorder-git hyprpicker matugen-bin python-gpustat hyprsunset-git
+    ```
