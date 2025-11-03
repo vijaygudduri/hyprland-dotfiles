@@ -1,25 +1,35 @@
-Install sddm and enable it, and install kitty
+1. **Install sddm and enable it, and install kitty**
+
 ```bash
 sudo pacman -S sddm kitty
 ```
+
 ```bash   
 sudo systemctl enable sddm
 ```
-Install nwg-drawer and nwg-look, the keybind SUPER+D is added in config for nwg-drawer
+
+2. **Install nwg-drawer and nwg-look, the keybind SUPER+D is added in config for nwg-drawer**
+
 ```bash      
 sudo pacman -S nwg-drawer nwg-look
 ```
-Install hyprpanel and paste the config file content in ~/.config/hyprpanel/config.jsonc, exec-once for hyprpanel is added in config. For custom netspeed, the script is added, make it executable.
+
+3. **Install hyprpanel and paste the config file content in ~/.config/hyprpanel/config.jsonc, exec-once for hyprpanel is added in config. For custom netspeed, the script is added, make it executable**
+
 ```bash
 paru -S ags-hyprpanel-git
 ```
+
 ```bash 
 paru -S --needed aylurs-gtk-shell-git wireplumber libgtop bluez bluez-utils btop networkmanager dart-sass wl-clipboard brightnessctl swww python upower pacman-contrib power-profiles-daemon gvfs gtksourceview3 libsoup3 grimblast-git wf-recorder-git hyprpicker matugen-bin python-gpustat hyprsunset-git
 ```
-Install gnome polkit (authentication agent) and gnome keyring (password store), the exec-once for polkit and keyring are added in config
+
+4. **Install gnome polkit (authentication agent) and gnome keyring (password store), the exec-once for polkit and keyring are added in config**
+
 ```bash
 sudo pacman -S polkit-gnome gnome-keyring
 ```
+
 Install xdg-desktop-portal-hyprland, the env's are added in config
 ```bash
 sudo pacman -S xdg-desktop-portal-hyprland
@@ -69,37 +79,3 @@ sudo pacman -S brave-bin network-manager-applet gnome-calculator gnome-text-edit
 ```bash
 paru -S visual-studio-code-bin zoom
 ```
-
-1.  **Install SDDM and Kitty.**
-    Install the SDDM Display Manager and the Kitty terminal emulator.
-
-    ```bash
-    sudo pacman -S sddm kitty
-    ```
-
-2.  **Enable SDDM.**
-    Enable the display manager to start automatically on boot.
-
-    ```bash
-    sudo systemctl enable sddm
-    ```
-
-3.  **Install `nwg-drawer` and `nwg-look`.**
-    The keybind `SUPER+D` is added in config for nwg-drawer.
-
-    ```bash
-    sudo pacman -S nwg-drawer nwg-look
-    ```
-
-4.  **Install `hyprpanel` and Dependencies.**
-    Install `hyprpanel` via the AUR. Paste the config file content into `~/.config/hyprpanel/config.jsonc`. (The `exec-once` is added in config.)
-
-    ```bash
-    paru -S ags-hyprpanel-git
-    ```
-
-5.  **Install a Batch of Dependencies.**
-
-    ```bash
-    paru -S --needed aylurs-gtk-shell-git wireplumber libgtop bluez bluez-utils btop networkmanager dart-sass wl-clipboard brightnessctl swww python upower pacman-contrib power-profiles-daemon gvfs gtksourceview3 libsoup3 grimblast-git wf-recorder-git hyprpicker matugen-bin python-gpustat hyprsunset-git
-    ```
