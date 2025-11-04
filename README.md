@@ -62,6 +62,8 @@
 
       [Theme]
       Current=sugar-candy
+      CursorTheme=Bibata-Modern-Ice
+      CursorSize=24
       ```
 
 10.  **Copy brave-browser.desktop file from /usr/share/applications to ~/.local/share/applications and add the below flags in exec line**
