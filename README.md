@@ -81,10 +81,10 @@
       systemctl --user enable hypr-autoswitch.service
       ```
 
-12.  **Save Battery notification script in ~/.config/hypr/scripts and make it executable, the exec-once for the script is added in config**
+12.  **Save Battery notification and Bluetooth auto-connect scripts in ~/.config/hypr/scripts and make those executable, the exec-once for the scripts are added in config**
 
       ```bash
-      chmod +x ~/.config/hypr/scripts/battery-notify.sh
+      chmod +x ~/.config/hypr/scripts/battery-notify.sh ~/.config/hypr/scripts/bluetooth-autoconnect.sh
       ```
 
 13.  **To decrease boot order timeout prompt of systemd while rebooting, switch to root and change timeout to 2 (or 0 to disable completly) in /boot/loader/loader.conf**
