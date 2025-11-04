@@ -100,3 +100,11 @@
       ```bash
       paru -S visual-studio-code-bin zoom
       ``` 
+
+15.  **Change to google dns**
+
+      ```bash
+      nmcli con mod 'Android' ipv4.dns '8.8.8.8 8.8.4.4'
+      nmcli con mod 'Android' ipv6.dns '2001:4860:4860::8888 2001:4860:4860::8844'
+      nmcli con up 'Android'
+      ```
