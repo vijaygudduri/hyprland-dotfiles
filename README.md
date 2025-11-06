@@ -108,3 +108,14 @@
       nmcli con mod 'Android' ipv6.dns '2001:4860:4860::8888 2001:4860:4860::8844'
       nmcli con up 'Android'
       ```
+
+16.  **Install starship(shell prompt) and add config in cachyos fish shell**
+
+      ```bash
+      sudo pacman -S starship
+      ```
+      **Switch to sudo and add starship config in fish**
+
+      ```bash
+      echo 'starship init fish | source' >> /usr/share/cachyos-fish-config/cachyos-config.fish
+      ```
