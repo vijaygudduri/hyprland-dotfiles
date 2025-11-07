@@ -1,0 +1,180 @@
+/* ---------------------------------------------------- */
+/* Global Settings */
+/* ---------------------------------------------------- */
+
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 14px;
+  padding: 0px;
+  font-weight: 500;
+  color: #e6e3ea;
+  transition: background 0.25s, color 0.25s;
+}
+
+/* ---------------------------------------------------- */
+/* Window & Bar Appearance */
+/* ---------------------------------------------------- */
+
+window#waybar {
+  background: rgba(20, 20, 25, 0.75);
+}
+
+/* ---------------------------------------------------- */
+/* Common Module Styling (Pill Shape) */
+/* ---------------------------------------------------- */
+
+#workspaces button,
+#pulseaudio,
+#clock,
+#battery,
+#network,
+#bluetooth,
+#custom-power {
+  background: rgba(151, 132, 206, 0.15); /* Soft lavender tint */
+  border-radius: 12px;
+  padding: 0px 8px;
+  margin: 0 4px;
+  border: 1px solid rgba(162, 119, 255, 0.25);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+/* Subtle hover highlight for most modules */
+#pulseaudio:hover,
+#clock:hover,
+#backlight:hover,
+#battery:hover,
+#network:hover,
+#bluetooth:hover {
+  background: rgba(162, 119, 255, 0.35);
+  color: #fff;
+}
+
+/* ---------------------------------------------------- */
+/* Workspaces */
+/* ---------------------------------------------------- */
+
+#workspaces {
+  margin: 0 6px;
+}
+
+#workspaces button {
+  min-width: 24px;
+  border-radius: 9px;
+  background: rgba(90, 80, 130, 0.25);
+  color: #bfb2d0;
+  margin: 2px 2px;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(100, 100, 120, 0.25);
+}
+
+/* Icon text/label styling */
+#workspaces button label {
+  font-size: 18px;
+  letter-spacing: 12px; 
+}
+
+#workspaces button.active label {
+  letter-spacing: 12px;
+}
+
+#workspaces button.active {
+  background: rgba(162, 119, 255, 0.25);
+  color: #e8dcff;
+  font-weight: 600;
+  border: 1px solid rgba(162, 119, 255, 0.35);
+  box-shadow: inset 0 -2px #e8dcff;
+}
+
+#workspaces button:hover {
+  background: rgba(162, 119, 255, 0.45);
+  color: #fff;
+}
+
+/* ---------------------------------------------------- */
+/* Modules Center (Pulseaudio, Clock, Battery) */
+/* ---------------------------------------------------- */
+
+/* Specific module colors */
+#pulseaudio {
+  color: #87ceeb; /* Light blue */
+}
+
+#clock {
+  color: #f090d3; /* White */
+}
+
+#battery {
+  color: #98fb98; /* Light green */
+}
+
+/* Battery state colors */
+#battery.warning {
+  color: #f8c94a;
+}
+#battery.critical {
+  color: #ff6b6b;
+}
+
+/* ---------------------------------------------------- */
+/* Modules Right (Network, Bluetooth, Power) */
+/* ---------------------------------------------------- */
+
+#bluetooth {
+  color: #9cc1e6; 
+}
+
+#network {
+  color: #78dbd3; 
+}
+
+/* Power button styling */
+#custom-power {
+  background: rgba(151, 132, 206, 0.18);
+  color: rgb(218, 84, 84);
+  border: none;
+  font-size: 21px;
+  /* padding: 6px 12px; */
+  transition: background 0.2s;
+}
+
+/* ---------------------------------------------------- */
+/* Backlight Slider */
+/* ---------------------------------------------------- */
+
+#backlight-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-color: rgb(72, 67, 143);
+  border: none;
+  box-shadow: none;
+}
+#backlight-slider trough {
+  min-height: 10px;
+  min-width: 175px;
+  border-radius: 5px;
+  background-color: rgb(136, 134, 134);
+}
+#backlight-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+  background-color: red;
+}
+
+/* --- 1. Style the PowerMenu Container --- */
+menuitem {
+    /* Increase vertical padding to make the menu item taller */
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    /* Increase horizontal padding */
+    padding-left: 15px;
+    padding-right: 15px;
+    
+    /* Optional: A subtle hover effect */
+    transition: background-color 0.2s; 
+    border-radius: 8px; /* Give individual items rounded corners */
+}
+
+menuitem:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle hover background */
+}
