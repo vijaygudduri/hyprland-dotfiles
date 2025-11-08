@@ -45,7 +45,7 @@
   },
 
 "pulseaudio": {
-    "format": "{icon}  {volume}%",
+    "format": "{icon} {volume}%",
     "format-bluetooth": "{icon}  {volume}%",
     "format-muted": " Mute",
     "format-icons": {
@@ -92,7 +92,7 @@
 
   "network": {
     "format": "{ifname}",
-    "format-wifi": "  {essid}({signalStrength}%)",
+    "format-wifi": " {essid}({signalStrength}%)",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
     "format-disconnected": "󰖪  Disconnected", 
     "tooltip-format-disconnected": "Disconnected",
