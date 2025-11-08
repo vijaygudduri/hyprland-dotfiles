@@ -164,3 +164,21 @@ window#waybar {
   background-color: red;
 }
 
+/* --- 1. Style the PowerMenu Container --- */
+menuitem {
+    /* Increase vertical padding to make the menu item taller */
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    /* Increase horizontal padding */
+    padding-left: 15px;
+    padding-right: 15px;
+    
+    /* Optional: A subtle hover effect */
+    transition: background-color 0.2s; 
+    border-radius: 8px; /* Give individual items rounded corners */
+}
+
+menuitem:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle hover background */
+}
+
