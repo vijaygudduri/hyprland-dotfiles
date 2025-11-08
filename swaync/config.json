@@ -1,7 +1,7 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
   "ignore-gtk-theme": true,
-  "positionX": "right",
+  "positionX": "center",
   "positionY": "top",
   "layer": "overlay",
   "control-center-layer": "top",
@@ -18,7 +18,7 @@
   "notification-body-image-width": 200,
   "timeout": 10,
   "timeout-low": 5,
-  "timeout-critical": 0,
+  "timeout-critical": 5,
   "fit-to-screen": true,
   "relative-timestamps": true,
   "control-center-width": 450,
@@ -51,9 +51,11 @@
     }
   },
   "widgets": [
+    "dnd",
+    "volume",
+    "backlight",
     "inhibitors",
     "title",
-    "dnd",
     "notifications"
   ],
   "widget-config": {
@@ -94,6 +96,17 @@
           "update-command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
         }
       ]
+    },
+    "volume": {
+      "label": "󰕾",
+      "show-per-app-icon": true,
+      "show-per-app": true
+    },
+    "backlight": {
+      "label": "󰃠",
+      "device": "intel_backlight",
+      "subsystem": "backlight",
+      "min": 5
     }
   }
 }
