@@ -1,7 +1,7 @@
 :root {
-  --cc-bg: rgba(46, 46, 46, 0.7);
+  --cc-bg: rgba(26, 23, 23, 0.363);
   --noti-border-color: rgba(255, 255, 255, 0.15);
-  --noti-bg: 48, 48, 48;
+  --noti-bg: 28,28,38 ;
   --noti-bg-alpha: 0.8;
   --noti-bg-darker: rgb(38, 38, 38);
   --noti-bg-hover: rgb(56, 56, 56);
@@ -558,4 +558,22 @@ notificationwindow, blankwindow, blankwindow {
 .widget-inhibitors > button {
   margin-left: 8px;
   border-radius: var(--border-radius);
+}
+
+/* === Bigger Nerd Font Icons for Volume & Brightness Labels === */
+
+.widget-volume label:first-child,
+.widget-backlight label:first-child {
+  font-size: 1.5rem;     /* increase or tweak: try 2rem if you want even bigger */
+  line-height: 1.2;
+  margin-right: 10px;
+  color: var(--text-color); /* keeps same color as text */
+}
+
+/* Make sure it aligns nicely with the slider */
+.widget-volume,
+.widget-backlight {
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
 }
