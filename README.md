@@ -94,11 +94,11 @@
 14.  **Currently installed apps**
 
       ```bash
-      sudo pacman -S brave-bin network-manager-applet gnome-calculator gnome-text-editor gnome-clocks blueman nautilus libreoffice-fresh telegram-desktop transmission-gtk smplayer swappy evince
+      sudo pacman -S --needed brave-bin network-manager-applet gnome-calculator gnome-text-editor gnome-clocks blueman nautilus libreoffice-fresh telegram-desktop transmission-gtk smplayer swappy evince
       ```
 
       ```bash
-      paru -S visual-studio-code-bin zoom
+      paru -S --needed visual-studio-code-bin zoom
       ``` 
 
 15.  **Change to google dns**
