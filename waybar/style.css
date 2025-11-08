@@ -30,8 +30,10 @@ window#waybar {
 #battery,
 #network,
 #bluetooth,
-#custom-power {
-  background: rgba(151, 132, 206, 0.15); /* Soft lavender tint */
+#backlight,
+#custom-power,
+#custom-notifications {
+  background: rgba(120, 102, 172, 0.15); 
   border-radius: 9px;
   padding: 0px 8px;
   margin: 0 4px;
@@ -45,6 +47,9 @@ window#waybar {
 #backlight:hover,
 #battery:hover,
 #network:hover,
+#backlight:hover,
+#custom-notifications:hover,
+#workspaces button:hover,
 #bluetooth:hover {
   background: rgba(162, 119, 255, 0.35);
   color: #fff;
@@ -59,10 +64,7 @@ window#waybar {
 }
 
 #workspaces button {
-  /* min-width: 26px; */
   padding: 0px 15px;
-  border-radius: 9px;
-  background: rgba(90, 80, 130, 0.25);
   color: #bfb2d0;
   transition: all 0.2s ease;
   border: 1px solid rgba(100, 100, 120, 0.25);
@@ -74,21 +76,12 @@ window#waybar {
   letter-spacing: 14px; 
 }
 
-#workspaces button.active label {
-  letter-spacing: 14px;
-}
-
 #workspaces button.active {
-  background: rgba(162, 119, 255, 0.25);
+  /* background: rgba(126, 214, 148, 0.25); */
   color: #e8dcff;
   font-weight: 600;
   border: 1px solid rgba(162, 119, 255, 0.35);
   box-shadow: inset 0 -2px #e8dcff;
-}
-
-#workspaces button:hover {
-  background: rgba(162, 119, 255, 0.45);
-  color: #fff;
 }
 
 /* ---------------------------------------------------- */
@@ -128,40 +121,19 @@ window#waybar {
   color: #78dbd3; 
 }
 
-/* Power button styling */
-#custom-power {
-  background: rgba(151, 132, 206, 0.18);
-  color: rgb(218, 84, 84);
+#custom-notifications {
+  color: #a6e3a1;
   font-size: 21px;
   transition: background 0.2s;
   padding: 0px 15px;
 }
 
-/* ---------------------------------------------------- */
-/* Backlight Slider */
-/* ---------------------------------------------------- */
-
-#backlight-slider slider {
-  min-height: 0px;
-  min-width: 0px;
-  opacity: 0.75;
-  background-color: rgb(63, 188, 197);
-  border: none;
-  box-shadow: none;
-}
-
-#backlight-slider trough {
-  min-height: 10px;
-  min-width: 175px;
-  border-radius: 5px;
-  opacity: 0.75;
-  background-color: rgb(136, 134, 134);
-}
-
-#backlight-slider highlight {
-  min-width: 10px;
-  border-radius: 5px;
-  background-color: red;
+/* Power button styling */
+#custom-power {
+  color: rgb(218, 84, 84);
+  font-size: 21px;
+  transition: background 0.2s;
+  padding: 0px 15px;
 }
 
 /* --- 1. Style the PowerMenu Container --- */
@@ -181,4 +153,7 @@ menuitem {
 menuitem:hover {
     background-color: rgba(255, 255, 255, 0.1); /* Subtle hover background */
 }
+
+
+
 
