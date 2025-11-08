@@ -112,7 +112,7 @@ fn_percentage() {
     if (( battery_percentage >= unplug_charger_threshold )) && [[ "$battery_status" != "Discharging" ]] && [[ "$battery_status" != "Full" ]] && (( delta >= interval )); then
         local icon=$(percentage_to_step "$battery_percentage")
         if $verbose; then echo "Notify: Unplug threshold reached"; fi
-        notify-send -a "Power Notify" -t 5000 -r 5 -u critical -i "battery-$icon-charging" \
+        notify-send -a "Power Notify" -t 5000 -r 5 -u critical -i "battery-level-$icon-charging-symbolic" \
             "Battery Charged" "Battery at $battery_percentage%. Unplug charger."
         last_notified_percentage=$battery_percentage
     fi
