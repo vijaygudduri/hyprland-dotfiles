@@ -70,11 +70,11 @@ window#waybar {
 /* Icon text/label styling */
 #workspaces button label {
   font-size: 18px;
-  letter-spacing: 12px; 
+  letter-spacing: 14px; 
 }
 
 #workspaces button.active label {
-  letter-spacing: 12px;
+  letter-spacing: 14px;
 }
 
 #workspaces button.active {
