@@ -1,8 +1,9 @@
+
 :root {
-  --cc-bg: rgba(26, 23, 23, 0.363);
+  --cc-bg: rgba(35, 35, 35, 0.65);
   --noti-border-color: rgba(255, 255, 255, 0.15);
-  --noti-bg: 28,28,38 ;
-  --noti-bg-alpha: 0.8;
+  --noti-bg: 48,48,48 ;
+  --noti-bg-alpha: 1;
   --noti-bg-darker: rgb(38, 38, 38);
   --noti-bg-hover: rgb(56, 56, 56);
   --noti-bg-focus: rgba(68, 68, 68, 0.6);
@@ -334,9 +335,9 @@ notificationwindow, blankwindow, blankwindow {
   background: transparent;
 }
 
-.control-center .control-center-list .notification {
+/* .control-center .control-center-list .notification {
   box-shadow: var(--notification-shadow);
-}
+} */
 
 .control-center .control-center-list .notification .notification-default-action,
 .control-center .control-center-list .notification .notification-action {
@@ -576,4 +577,40 @@ notificationwindow, blankwindow, blankwindow {
   align-items: center;
   gap: 12px;
   padding: 10px 14px;
+}
+
+/* --- Remove grey slab/shadow around notifications inside Control Center --- */
+
+/* wrappers */
+.control-center .control-center-list .notification-row,
+.control-center .control-center-list .notification-background {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+/* the card itself */
+.control-center .control-center-list .notification {
+  background-color: rgba(20, 20, 25, 0.60); /* or transparent */
+  box-shadow: 0 0 0 0 transparent;          /* GTK-safe “none” */
+  border: none;
+  outline: none;
+  border-radius: 12px;                       /* keep your rounding */
+}
+
+/* inner sections */
+.control-center .control-center-list .notification .notification-default-action,
+.control-center .control-center-list .notification .notification-action {
+  background-color: transparent;
+  box-shadow: 0 0 0 0 transparent;
+  border: none;
+}
+
+/* if you use grouped notifications, also clear their wrappers */
+.control-center .control-center-list .notification-group,
+.control-center .control-center-list .notification-group .notification-row,
+.control-center .control-center-list .notification-group .notification-background {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
 }
