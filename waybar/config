@@ -41,7 +41,9 @@
       "org.gnome.Nautilus": "",
       "discord": "󰙯",
       "spotify": "󰎈",
-      "org.telegram.desktop": ""
+      "org.telegram.desktop": "",
+      "org.gnome.meld":"",
+      "org.pulseaudio.pavucontrol":""
     }
   },
 
