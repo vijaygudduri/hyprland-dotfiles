@@ -50,7 +50,8 @@
     "format-muted": " Mute",
     "format-icons": {
         "headphone": "",
-        "headset": ""
+        "headset": "",
+		"default": ["", ""]
     },
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.005-",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.005+",
