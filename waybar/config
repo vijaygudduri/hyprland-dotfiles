@@ -4,6 +4,7 @@
   "position": "top",
   "margin-left": 10,
   "margin-right": 10,
+  "height" : 32,
 
   // --- Module Layout ---
   "modules-left": ["backlight", "backlight/slider", "hyprland/workspaces"],
@@ -13,7 +14,7 @@
   // --- Module Definitions ---
 
   "hyprland/workspaces": {
-    "format": "{windows}", // Show only windows, no icons
+    "format": "{windows}", 
     "format-window-separator": "",
     "on-click": "activate",
     "disable-scroll": true,
