@@ -18,7 +18,7 @@
 /* ---------------------------------------------------- */
 
 window#waybar {
-  background: rgba(20, 20, 25, 0.75);
+  background: rgba(19, 19, 26, 0.75);
 }
 
 /* Tooltip */
@@ -26,7 +26,7 @@ tooltip {
   background: rgba(25, 25, 35, 0.9);      /* dark semi-transparent background */
   color: #e6e3ef;                         /* soft white text */
   border: 1px solid rgba(162, 119, 255, 0.25); /* subtle purple border */
-  border-radius: 12px;                    /* rounded corners */
+  border-radius: 10px;                    /* rounded corners */
   padding: 12px 16px;                      /* extra padding for readability */
   font-size: 13px;
   font-weight: 500;
@@ -52,7 +52,8 @@ tooltip label {
 #custom-power,
 #custom-netspeed,
 #custom-notifications {
-  background: rgba(120, 102, 172, 0.15); 
+  /* background: rgba(120, 102, 172, 0.15);  */
+  background: rgba(94, 92, 95, 0.15);
   border-radius: 12px;
   padding: 0px 8px;
   margin: 0 4px;
