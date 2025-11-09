@@ -1,5 +1,6 @@
 {
   // --- General Waybar Settings ---
+  
   "layer": "top",
   "position": "top",
   "margin-left": 10,
@@ -7,6 +8,7 @@
   "height" : 32,
 
   // --- Module Layout ---
+
   "modules-left": ["backlight","pulseaudio","hyprland/workspaces"],
   "modules-center": ["battery", "clock", "custom/notifications"],
   "modules-right": ["network", "bluetooth", "custom/power"],
@@ -47,14 +49,14 @@
     }
   },
 
-"pulseaudio": {
+  "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-bluetooth": "{icon}  {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
     "format-muted": " Mute",
     "format-icons": {
         "headphone": "",
         "headset": "",
-		"default": ["", ""]
+        "default": ["", ""]
     },
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.005-",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.005+",
@@ -62,7 +64,7 @@
     "on-click-right": "pavucontrol",
     "scroll-step": 0.1,
     "ignored-sinks": ["Easy Effects Sink"]
-},
+  },
 
 
   "clock": {
@@ -71,14 +73,7 @@
   },
 
   "backlight": {
-    "format": "󰃞 {percent}% ",
-    "device": "intel_backlight"
-  },
-
-  "backlight/slider": {
-    "min": 1,
-    "max": 100,
-    "orientation": "horizontal",
+    "format": "󰃞 {percent}%",
     "device": "intel_backlight"
   },
 
@@ -88,8 +83,8 @@
       "critical": 10
     },
     "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-icons": ["󰁺", "󰁼", "󰁽", "󰁾", "󰂀", "󰁹"],
+    "format-charging": "{icon}  {capacity}%",
+    "format-icons": ["","","","",""],
     "tooltip": true
   },
 
@@ -100,7 +95,7 @@
     "format-disconnected": "󰖪  Disconnected", 
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50
-},
+  },
 
   "bluetooth": {
     "format": "󰂯 {status}",
@@ -110,20 +105,21 @@
   },
 
   "custom/notifications": {
-        "format": "󰂚", 
-        "on-click": "swaync-client -t -sw"
-    },
+    "format": "󰂚", 
+    "tooltip": false,
+    "on-click": "swaync-client -t -sw"
+  },
 
- "custom/power": {
-	"format" : "󰤆",
-	"tooltip": false,
-	"menu": "on-click",
-	"menu-file": "~/.config/waybar/power_menu.xml",
-	"menu-actions": {
-		"Lock": "loginctl lock-session",
-		"Logout": "hyprctl dispatch exit 0",
-		"Reboot": "systemctl reboot",
-		"Shutdown": "systemctl poweroff"
-	}
-}
+  "custom/power": {
+    "format" : "󰐥",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "~/.config/waybar/power_menu.xml",
+    "menu-actions": {
+      "Lock": "loginctl lock-session",
+      "Logout": "hyprctl dispatch exit 0",
+      "Reboot": "systemctl reboot",
+      "Shutdown": "systemctl poweroff"
+    }
+  }
 }
