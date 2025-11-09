@@ -103,45 +103,42 @@ tooltip label {
   letter-spacing: 14px; 
 }
 
-/* ---------------------------------------------------- */
-/* Modules Center (Pulseaudio, Clock, Battery) */
-/* ---------------------------------------------------- */
-
 /* Specific module colors */
+
 #pulseaudio {
-  color: #87ceeb; /* Light blue */
+  color: #85dafc; /* Light blue */
 }
 
 #clock {
-  color: #f090d3; /* White */
+  color: #f884d5; /* White */
 }
 
 #battery {
-  color: #98fb98; /* Light green */
+  color: #8bfa8b; /* Light green */
 }
 
-/* Battery state colors */
+#backlight {
+  color: #fde680; /* Light green */
+}
+
 #battery.warning {
-  color: #f8c94a;
-}
-#battery.critical {
-  color: #ff6b6b;
+  color: #f8d269;  /* Battery state colors */
 }
 
-/* ---------------------------------------------------- */
-/* Modules Right (Network, Bluetooth, Power) */
-/* ---------------------------------------------------- */
+#battery.critical {
+  color: #fc7474;
+}
 
 #bluetooth {
-  color: #9cc1e6; 
+  color: #9583fd; 
 }
 
 #network {
-  color: #78dbd3; 
+  color: #7cfcf1; 
 }
 
 #custom-notifications {
-  color: #a6e3a1;
+  color: #59faaf;
   font-size: 21px;
   transition: background 0.2s;
   padding: 0px 15px;
