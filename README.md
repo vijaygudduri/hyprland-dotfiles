@@ -17,7 +17,7 @@
 3.  **Install necessaries**
 
       ```bash      
-      sudo pacman -S --needed nwg-drawer nwg-look waybar swaync polkit-gnome gnome-keyring xdg-desktop-portal-hyprland hypridle hyprlock hyprpaper cliphist socat jq starship network-manager-applet gnome-calculator gnome-text-editor gnome-clocks blueman nautilus libreoffice-fresh telegram-desktop transmission-gtk smplayer swappy evince brightnessctl
+      sudo pacman -S --needed nwg-drawer nwg-look waybar swaync polkit-gnome gnome-keyring xdg-desktop-portal-hyprland hypridle hyprlock hyprpaper cliphist socat jq starship network-manager-applet gnome-calculator gnome-text-editor gnome-clocks blueman nautilus libreoffice-fresh telegram-desktop transmission-gtk smplayer swappy evince brightnessctl hyprpicker
       ```
 
       ```bash
