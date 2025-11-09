@@ -1,3 +1,4 @@
+
 /* ---------------------------------------------------- */
 /* Global Settings */
 /* ---------------------------------------------------- */
@@ -49,6 +50,7 @@ tooltip label {
 #bluetooth,
 #backlight,
 #custom-power,
+#custom-netspeed,
 #custom-notifications {
   background: rgba(120, 102, 172, 0.15); 
   border-radius: 9px;
@@ -151,6 +153,10 @@ tooltip label {
   font-size: 23px;
   transition: background 0.2s;
   padding: 0px 15px;
+}
+
+#custom-netspeed {
+  min-width: 90px;
 }
 
 /* ===== Power Menu Styling ===== */
