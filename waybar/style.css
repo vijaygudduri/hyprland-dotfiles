@@ -77,12 +77,12 @@ tooltip label {
 /* Workspaces */
 /* ---------------------------------------------------- */
 #workspaces {
-  margin-left: 25px;
+  margin-left: 15px;
 }
 
 #workspaces button {
   padding: 0px 12px;
-  margin: 0px 1px;
+  margin: 0px 2px;
   color: #bfb2d0;
   transition: all 0.3s ease;
   border: 1px solid rgba(100, 100, 120, 0.25);
