@@ -58,7 +58,7 @@
       CursorSize=24
       ```
 
-8.  **For workspace autoswitch, save autoswitch.sh script in ~/.config/hypr/scripts directory and make it executable with below command, then save hypr-autoswitch.service file in ~/.config/systemd/user directory and enable the service**
+8.  **For workspace autoswitch functionality, enable the service**
 
       ```bash
       systemctl --user daemon-reload
