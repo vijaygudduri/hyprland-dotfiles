@@ -58,30 +58,29 @@ window#waybar {
 /* ---------------------------------------------------- */
 /* Workspaces */
 /* ---------------------------------------------------- */
-
 #workspaces {
-  margin: 0 6px;
+  margin-left: 25px;
 }
 
 #workspaces button {
-  padding: 0px 15px;
+  padding: 0px 12px;
+  margin: 0px 1px;
   color: #bfb2d0;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   border: 1px solid rgba(100, 100, 120, 0.25);
+}
+
+#workspaces button.active {
+  color: #e8dcff;
+  font-weight: 600;
+  border: 1px solid rgba(184, 62, 255, 0.35);
+  box-shadow: inset 0 -2px #e8dcff;
 }
 
 /* Icon text/label styling */
 #workspaces button label {
   font-size: 18px;
   letter-spacing: 14px; 
-}
-
-#workspaces button.active {
-  /* background: rgba(126, 214, 148, 0.25); */
-  color: #e8dcff;
-  font-weight: 600;
-  border: 1px solid rgba(162, 119, 255, 0.35);
-  box-shadow: inset 0 -2px #e8dcff;
 }
 
 /* ---------------------------------------------------- */
@@ -153,7 +152,3 @@ menuitem {
 menuitem:hover {
     background-color: rgba(255, 255, 255, 0.1); /* Subtle hover background */
 }
-
-
-
-
