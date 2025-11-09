@@ -135,20 +135,24 @@ window#waybar {
   padding: 0px 15px;
 }
 
-/* --- 1. Style the PowerMenu Container --- */
+/* ===== Power Menu Styling ===== */
+menu {
+  background: linear-gradient(180deg, rgba(30, 30, 45, 0.85), rgba(20, 20, 30, 0.75));
+  border-radius: 12px;
+  border: 5px solid rgba(255, 27, 27, 0.15);
+  padding: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
 menuitem {
-    /* Increase vertical padding to make the menu item taller */
-    padding-top: 10px; 
-    padding-bottom: 10px;
-    /* Increase horizontal padding */
-    padding-left: 15px;
-    padding-right: 15px;
-    
-    /* Optional: A subtle hover effect */
-    transition: background-color 0.2s; 
-    border-radius: 8px; /* Give individual items rounded corners */
+  padding-top: 10px; 
+  padding-bottom: 10px;
+  color: #d8d3e0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
 menuitem:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle hover background */
+  background-color: rgba(162, 119, 255, 0.2);
+  color: #ffffff;
 }
