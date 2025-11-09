@@ -20,6 +20,23 @@ window#waybar {
   background: rgba(20, 20, 25, 0.75);
 }
 
+/* Tooltip */
+tooltip {
+  background: rgba(25, 25, 35, 0.9);      /* dark semi-transparent background */
+  color: #e6e3ef;                         /* soft white text */
+  border: 1px solid rgba(162, 119, 255, 0.25); /* subtle purple border */
+  border-radius: 10px;                    /* rounded corners */
+  padding: 12px 16px;                      /* extra padding for readability */
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* soft glow below tooltip */
+}
+
+tooltip label {
+  padding: 8px 12px;
+  color: #d8d3e0; /* lighter text inside tooltips */
+}
+
 /* ---------------------------------------------------- */
 /* Common Module Styling (Pill Shape) */
 /* ---------------------------------------------------- */
@@ -49,6 +66,7 @@ window#waybar {
 #network:hover,
 #backlight:hover,
 #custom-notifications:hover,
+/* #custom-power:hover, */
 #workspaces button:hover,
 #bluetooth:hover {
   background: rgba(162, 119, 255, 0.35);
@@ -129,13 +147,14 @@ window#waybar {
 
 /* Power button styling */
 #custom-power {
-  color: rgb(218, 84, 84);
-  font-size: 21px;
+  color: rgb(250, 97, 97);
+  font-size: 23px;
   transition: background 0.2s;
   padding: 0px 15px;
 }
 
 /* ===== Power Menu Styling ===== */
+
 menu {
   background: linear-gradient(180deg, rgba(30, 30, 45, 0.85), rgba(20, 20, 30, 0.75));
   border-radius: 12px;
