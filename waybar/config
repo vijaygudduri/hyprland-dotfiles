@@ -28,7 +28,7 @@
       "class<firefox> title<.*github.*>": "",
       "Brave-browser": "",
       "smplayer": "",
-      "libreoffice*": "",
+      "libreoffice*": "󰏆",
       "org.gnome.TextEditor": "󱩼",
       "blueman-manager": "󰂯",
       "org.gnome.Calculator": "",
