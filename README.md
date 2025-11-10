@@ -33,6 +33,10 @@
       ```bash
       cp -r hypr kitty fastfetch swaync systemd waybar brave-flags.conf ~/.config/
       ```
+      
+      ```bash
+      cp -r wallpapers ~
+      ```
 
 5.  **Make all the scripts executable**
 
