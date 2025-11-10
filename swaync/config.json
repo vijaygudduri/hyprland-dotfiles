@@ -119,8 +119,8 @@
         "label": "",
         "type": "toggle",
         "active": true,
-        "command": "sh -c '~/.config/swaync/scripts/toggle_hyprsunset.sh'",
-        "update-command": "sh -c 'set +e;pgrep -x hyprsunset >/dev/null && echo true || echo false'"
+        "command": "systemctl --user $([[ $SWAYNC_TOGGLE_STATE == true ]] && echo start || echo stop) hyprsunset.service",
+        "update-command": "systemctl --user is-active --quiet hyprsunset.service && echo true || echo false"
       }
     ]
    }
