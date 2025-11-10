@@ -130,7 +130,6 @@ echo "$(date): Hyprland socket found. Starting event listener." >> "$LOG"
 # Main event loop.
 socat -u UNIX-CONNECT:"$SOCKET" - | while read -r event; do
   # Optimized: Get active workspace ID once per event.
-  local ws
   ws=$(hyprctl activeworkspace -j 2>/dev/null | jq -r '.id' 2>/dev/null)
   
   if [ -z "$ws" ] || [ "$ws" = "null" ]; then
