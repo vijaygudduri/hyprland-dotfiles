@@ -11,8 +11,8 @@
   // --- Module Layout ---
 
   "modules-left": ["backlight","pulseaudio","hyprland/workspaces"],
-  "modules-center": ["battery", "clock", "custom/notifications"],
-  "modules-right": ["custom/netspeed","network", "bluetooth", "custom/power"],
+  "modules-center": ["battery", "clock"],
+  "modules-right": ["custom/netspeed","network", "custom/notifications", "bluetooth", "custom/power"],
 
   // --- Module Definitions ---
 
