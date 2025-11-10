@@ -321,7 +321,8 @@ notificationwindow, blankwindow, blankwindow {
   /* The Control Center which contains the old notifications + widgets */
   background: var(--cc-bg);
   color: var(--text-color);
-  border-radius: var(--border-radius);
+  border-radius: 30px;
+  border: var(--border);
 }
 
 .control-center .control-center-list-placeholder {
