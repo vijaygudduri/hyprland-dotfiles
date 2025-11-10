@@ -45,17 +45,19 @@
 7.  **To apply sugar-candy theme on sddm, create /etc/sddm.conf.d/sddm.conf file, and add the below config**
 
       ```bash
-      sudo mkdir -p /etc/sddm.conf.d ; sudo touch /etc/sddm.conf.d/sddm.conf ; sudo vim /etc/sddm.conf.d/sddm.conf
+      sudo mkdir -p /etc/sddm.conf.d ; sudo touch /etc/sddm.conf.d/sddm.conf
       ```
       
-      ```bash       
+      ```bash
+      bash -c "sudo tee /etc/sddm.conf.d/sddm.conf > /dev/null <<'EOF'
       [General]
       Numlock=on
-
+      
       [Theme]
       Current=sugar-candy
       CursorTheme=Bibata-Modern-Ice
       CursorSize=24
+      EOF"
       ```
 
 9.  **For workspace autoswitch functionality, enable the service**
