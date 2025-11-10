@@ -42,9 +42,13 @@
 
 6.  **Apply themes from nwg-look**
 
-7.  **To apply sugar-candy theme on sddm, add below in /etc/sddm.conf.d/sddm.conf file, if the file doesn't exist by default then create one**
+7.  **To apply sugar-candy theme on sddm, create /etc/sddm.conf.d/sddm.conf file, and add the below config**
 
-      ```bash      
+      ```bash
+      sudo mkdir -p /etc/sddm.conf.d ; sudo touch /etc/sddm.conf.d/sddm.conf ; sudo vim /etc/sddm.conf.d/sddm.conf
+      ```
+      
+      ```bash       
       [General]
       Numlock=on
 
@@ -54,16 +58,16 @@
       CursorSize=24
       ```
 
-8.  **For workspace autoswitch functionality, enable the service**
+9.  **For workspace autoswitch functionality, enable the service**
 
       ```bash
       systemctl --user daemon-reload
       systemctl --user enable hypr-autoswitch.service
       ```
 
-9.  **To decrease boot order timeout prompt of systemd while rebooting, switch to root and change timeout to 2 (or 0 to disable completly) in /boot/loader/loader.conf**
+10.  **To decrease boot order timeout prompt of systemd while rebooting, switch to root and change timeout to 2 (or 0 to disable completly) in /boot/loader/loader.conf**
 
-10.  **Change to google dns**
+11.  **Change to google dns**
 
       ```bash
       nmcli con mod 'Android' ipv4.dns '8.8.8.8 8.8.4.4'
@@ -71,7 +75,7 @@
       nmcli con up 'Android'
       ```
 
-11.  **Switch to sudo and add starship config in fish**
+12.  **Switch to sudo and add starship config in fish**
 
       ```bash
       echo 'starship init fish | source' >> /usr/share/cachyos-fish-config/cachyos-config.fish
