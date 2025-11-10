@@ -27,10 +27,6 @@
 4.  **Copy the configs from cloned repo to ~/.config**
 
       ```bash
-      rm -rf ~/.config/hypr #remove existing default config
-      ```
-
-      ```bash
       cd ~/hyprland-dotfiles #cd to cloned repo
       ```
 
