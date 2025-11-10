@@ -12,7 +12,7 @@
 
   "modules-left": ["backlight","pulseaudio","hyprland/workspaces"],
   "modules-center": ["battery", "clock"],
-  "modules-right": ["custom/netspeed","network", "custom/notifications", "bluetooth", "custom/power"],
+  "modules-right": ["custom/netspeed", "bluetooth", "custom/notifications", "network", "custom/power"],
 
   // --- Module Definitions ---
 
