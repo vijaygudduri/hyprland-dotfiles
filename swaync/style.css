@@ -1,14 +1,13 @@
-
 :root {
-  --cc-bg: rgba(35, 35, 35, 0.65);
+  --cc-bg: rgba(46, 46, 46, 0.7);
   --noti-border-color: rgba(255, 255, 255, 0.15);
-  --noti-bg: 48,48,48 ;
-  --noti-bg-alpha: 1;
+  --noti-bg: 48, 48, 48;
+  --noti-bg-alpha: 0.95;
   --noti-bg-darker: rgb(38, 38, 38);
   --noti-bg-hover: rgb(56, 56, 56);
   --noti-bg-focus: rgba(68, 68, 68, 0.6);
   --noti-close-bg: rgb(78, 78, 78);
-  --noti-close-bg-hover: rgb(94, 94, 94);
+  --noti-close-bg-hover: rgb(94, 94, 94rgba(68, 68, 68, 0.6));
   --text-color: rgb(255, 255, 255);
   --text-color-disabled: rgb(150, 150, 150);
   --bg-selected: rgb(0, 128, 255);
@@ -84,8 +83,8 @@ notificationwindow, blankwindow, blankwindow {
 
 .notification-row .notification-background .notification {
   /* The actual notification */
-  border-radius: var(--border-radius);
-  border: var(--border);
+  /* border-radius: var(--border-radius);
+  border: var(--border); */
   padding: 0;
   transition: var(--hover-tranistion);
   background: rgba(var(--noti-bg), var(--noti-bg-alpha));
@@ -335,9 +334,9 @@ notificationwindow, blankwindow, blankwindow {
   background: transparent;
 }
 
-/* .control-center .control-center-list .notification {
+.control-center .control-center-list .notification {
   box-shadow: var(--notification-shadow);
-} */
+}
 
 .control-center .control-center-list .notification .notification-default-action,
 .control-center .control-center-list .notification .notification-action {
@@ -347,6 +346,15 @@ notificationwindow, blankwindow, blankwindow {
 .control-center .control-center-list .notification .notification-default-action:hover,
 .control-center .control-center-list .notification .notification-action:hover {
   background-color: var(--noti-bg-hover);
+}
+
+/* --- Remove grey slab/shadow around notifications inside Control Center --- */
+.control-center .control-center-list .notification-group,
+.control-center .control-center-list .notification-group .notification-row,
+.control-center .control-center-list .notification-group .notification-background {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
 }
 
 .blank-window {
@@ -574,43 +582,23 @@ notificationwindow, blankwindow, blankwindow {
 /* Make sure it aligns nicely with the slider */
 .widget-volume,
 .widget-backlight {
-  align-items: center;
-  gap: 12px;
   padding: 10px 14px;
 }
 
-/* --- Remove grey slab/shadow around notifications inside Control Center --- */
 
-/* wrappers */
-.control-center .control-center-list .notification-row,
-.control-center .control-center-list .notification-background {
-  background-color: transparent;
-  box-shadow: none;
-  border: none;
+/* --- Balance button-grid alignment & spacing --- */
+.widget-buttons-grid flowboxchild > button {
+  border-radius: 25px;
+  transition: background 0.2s ease;
 }
 
-/* the card itself */
-.control-center .control-center-list .notification {
-  background-color: rgba(20, 20, 25, 0.60); /* or transparent */
-  box-shadow: 0 0 0 0 transparent;          /* GTK-safe “none” */
-  border: none;
-  outline: none;
-  border-radius: 12px;                       /* keep your rounding */
+.widget-buttons-grid flowboxchild > button.toggle:checked {
+  /* background: rgba(247, 252, 248, 0.25);  active bluish highlight */
+  /* box-shadow: 0 0 6px rgba(247, 27, 229, 0.5);  */
+  border: 2px solid rgba(153, 193, 253, 0.8);
 }
 
-/* inner sections */
-.control-center .control-center-list .notification .notification-default-action,
-.control-center .control-center-list .notification .notification-action {
-  background-color: transparent;
-  box-shadow: 0 0 0 0 transparent;
-  border: none;
-}
 
-/* if you use grouped notifications, also clear their wrappers */
-.control-center .control-center-list .notification-group,
-.control-center .control-center-list .notification-group .notification-row,
-.control-center .control-center-list .notification-group .notification-background {
-  background-color: transparent;
-  box-shadow: none;
-  border: none;
+.widget-buttons-grid flowboxchild > button label {
+  font-size: 1.4rem;
 }
