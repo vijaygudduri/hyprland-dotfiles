@@ -42,7 +42,7 @@
 
 6.  **Apply themes from nwg-look**
 
-7.  **To apply sugar-candy theme on sddm, create /etc/sddm.conf.d/sddm.conf file, and add the below config**
+7.  **To apply sugar-candy theme on sddm, run below commands**
 
       ```bash
       sudo mkdir -p /etc/sddm.conf.d ; sudo touch /etc/sddm.conf.d/sddm.conf
