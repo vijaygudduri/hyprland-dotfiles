@@ -160,6 +160,7 @@ notificationwindow, blankwindow, blankwindow {
   background: transparent;
   color: var(--text-color);
   text-shadow: none;
+  margin-bottom: 3px;
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .text-box .time {
@@ -179,6 +180,8 @@ notificationwindow, blankwindow, blankwindow {
   background: transparent;
   color: var(--text-color);
   text-shadow: none;
+  line-height: 1.20;
+  margin-bottom: 3px;
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content progressbar {
