@@ -114,20 +114,28 @@ tooltip label {
   color: #f884d5; /* White */
 }
 
-#battery {
-  color: #8bfa8b; /* Light green */
-}
-
 #backlight {
   color: #fde680; /* Light green */
 }
 
+#battery {
+  color: #8bfa8b; /* Light green */
+}
+
+#battery.good {
+  color: #84f7e7; 
+}
+
+#battery.pre-warning {
+  color: #fbfd7d; 
+}
+
 #battery.warning {
-  color: #f8d269;  /* Battery state colors */
+  color: #fa985f;
 }
 
 #battery.critical {
-  color: #fc7474;
+  color: #fd6c6c;
 }
 
 #bluetooth {
@@ -140,7 +148,7 @@ tooltip label {
 
 #custom-notifications {
   color: #59faaf;
-  font-size: 21px;
+  font-size: 20px;
   transition: background 0.2s;
   padding: 0px 15px;
 }

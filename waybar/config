@@ -53,8 +53,8 @@
     "format-bluetooth": "{icon} {volume}%",
     "format-muted": " Mute",
     "format-icons": {
-        "headphone": "",
-        "headset": "",
+        "headphone": "",
+        "headset": "",
         "default": ["", ""]
     },
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.005-",
@@ -78,12 +78,14 @@
 
   "battery": {
     "states": {
-      "warning": 25,
+      "good": 60,
+      "pre-warning": 40,
+      "warning": 20,
       "critical": 10
     },
     "format": "{icon} {capacity}%",
     "format-charging": "{icon}  {capacity}%",
-    "format-icons": ["","","",""],
+    "format-icons": ["","","","","","","","","",""],
     "tooltip": true
   },
 

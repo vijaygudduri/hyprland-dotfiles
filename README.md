@@ -1,17 +1,15 @@
+***Follow this after a fresh OS installation without any DE***
+
 1.  **Install hyprland, sddm, brave and kitty**
 
       ```bash
       sudo pacman -S hyprland sddm kitty brave-bin; sudo systemctl enable sddm
       ```
 
-2.  **Login to github, add new ssh key and clone the repo**
+2.  **Clone the repo**
 
       ```bash
-      ssh-keygen -t ed25519 -C "vijayg0127@gmail.com" #copy public key and paste in github
-      ```
-
-      ```bash
-      git clone git@github.com:vijaygudduri/hyprland-dotfiles.git
+      git clone https://github.com/vijaygudduri/hyprland-dotfiles.git
       ```
 
 3.  **Install necessaries**
@@ -44,7 +42,7 @@
       chmod +x ~/.config/hypr/scripts/*
       ```
 
-6.  **Apply themes from nwg-look**
+6.  **Apply themes from nwg-look (theme is 'catppuccin mocha', icon theme is 'tela circle dracula' and cursor theme is 'bibata modern ice')**
 
 7.  **To apply sugar-candy theme on sddm, run below commands**
 
@@ -73,7 +71,7 @@
 
 10.  **To decrease boot order timeout prompt of systemd while rebooting, switch to root and change timeout to 2 (or 0 to disable completly) in /boot/loader/loader.conf**
 
-11.  **Change to google dns**
+11.  **Change to google dns, replace 'Android' with your connection name**
 
       ```bash
       nmcli con mod 'Android' ipv4.dns '8.8.8.8 8.8.4.4'
@@ -86,3 +84,5 @@
       ```bash
       echo 'starship init fish | source' >> /usr/share/cachyos-fish-config/cachyos-config.fish
       ```
+
+***Reboot after all the process is done***
