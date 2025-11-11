@@ -123,19 +123,15 @@ tooltip label {
 }
 
 #battery.good {
-  color: #84f7e7; 
-}
-
-#battery.pre-warning {
-  color: #fbfd7d; 
+  color: #f8ef6f; 
 }
 
 #battery.warning {
-  color: #fa985f;
+  color: #f8975e;
 }
 
 #battery.critical {
-  color: #fd6c6c;
+  color: #ff5555;
 }
 
 #bluetooth {
