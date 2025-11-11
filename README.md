@@ -1,4 +1,4 @@
-***Follow this after a fresh OS installation without any DE***
+***Follow this after a fresh OS installation without any DE (This is tested only on CachyOS***
 
 1.  **Install hyprland, sddm, brave and kitty**
 
