@@ -1,3 +1,5 @@
+***Follow this after a fresh OS installation without any DE***
+
 1.  **Install hyprland, sddm, brave and kitty**
 
       ```bash
