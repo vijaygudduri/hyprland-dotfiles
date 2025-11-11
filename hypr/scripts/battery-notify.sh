@@ -10,10 +10,10 @@ fi
 # Default configuration (can override via environment variables)
 battery_full_threshold=${BATTERY_NOTIFY_THRESHOLD_FULL:-100}
 battery_critical_threshold=${BATTERY_NOTIFY_THRESHOLD_CRITICAL:-5}
-unplug_charger_threshold=${BATTERY_NOTIFY_THRESHOLD_UNPLUG:-80}
+unplug_charger_threshold=${BATTERY_NOTIFY_THRESHOLD_UNPLUG:-85}
 battery_low_threshold=${BATTERY_NOTIFY_THRESHOLD_LOW:-20}
 timer=${BATTERY_NOTIFY_TIMER:-200}          # Seconds before executing critical action
-notify_interval_minutes=${BATTERY_NOTIFY_NOTIFY:-1140} # Minutes between 'Battery Full' notifications
+notify_interval_minutes=${BATTERY_NOTIFY_NOTIFY:-30} # Minutes between 'Battery Full' notifications
 interval=${BATTERY_NOTIFY_INTERVAL:-5}      # Percentage steps for low/unplug notifications
 execute_critical=${BATTERY_NOTIFY_EXECUTE_CRITICAL:-"systemctl suspend"}
 execute_low=${BATTERY_NOTIFY_EXECUTE_LOW:-}
@@ -113,7 +113,7 @@ fn_percentage() {
         local icon=$(percentage_to_step "$battery_percentage")
         if $verbose; then echo "Notify: Unplug threshold reached"; fi
         notify-send -a "Power Notify" -t 5000 -r 5 -u critical -i "battery-level-$icon-charging-symbolic" \
-            "Battery Charged" "Battery at $battery_percentage%. Unplug charger."
+            "Battery Charged" "Battery at $battery_percentage%. Please Unplug the Charger, it's enough"
         last_notified_percentage=$battery_percentage
     fi
 
@@ -124,7 +124,7 @@ fn_percentage() {
             get_battery_info
             if [[ $battery_status != Discharging* ]]; then break; fi
             notify-send -a "Power Notify" -t 5000 -r 5 -u critical -i "xfce4-battery-critical" \
-                "Battery Critically Low" "$battery_percentage% is critically low. Suspending in $(( count / 60 )):$(( count % 60 )) ..."
+                "Battery Critically Low" "$battery_percentage% is critically low, it will be dead soon. Suspending in $(( count / 60 )):$(( count % 60 )) ..."
             (( count-- ))
             sleep 1
         done
@@ -138,7 +138,7 @@ fn_percentage() {
             local icon=$(percentage_to_step "$battery_percentage")
             if $verbose; then echo "Notify: Low battery threshold"; fi
             notify-send -a "Power Notify" -t 5000 -r 5 -u critical -i "battery-level-$icon-symbolic" \
-                "Battery Low" "Battery at $battery_percentage%. Connect charger."
+                "Battery Low" "Battery at $battery_percentage%. Please Connect the Charger, I beg you🙏"
             last_low_notified_percentage=$battery_percentage
         fi
     fi
@@ -159,7 +159,7 @@ fn_status() {
                 if (( battery_percentage <= battery_low_threshold )); then urgency="critical"; fi
                 local icon=$(percentage_to_step "$battery_percentage")
                 notify-send -a "Power Notify" -t 5000 -r 5 -u "$urgency" -i "battery-level-$icon-symbolic" \
-                    "Charger Unplugged" "Battery at $battery_percentage%."
+                    "Charger Unplugged" "Battery at $battery_percentage%"
                 $execute_discharging
             fi
             fn_percentage
@@ -172,7 +172,7 @@ fn_status() {
                 if (( battery_percentage >= unplug_charger_threshold )); then urgency="critical"; fi
                 local icon=$(percentage_to_step "$battery_percentage")
                 notify-send -a "Power Notify" -t 5000 -r 5 -u "$urgency" -i "battery-level-$icon-charging-symbolic" \
-                    "Charger Plugged In" "Battery at $battery_percentage%."
+                    "Charger Plugged In" "Battery at $battery_percentage%"
                 $execute_charging
             fi
             fn_percentage
@@ -183,7 +183,7 @@ fn_status() {
                 local now=$(date +%s)
                 if [[ "$prev_status" =~ ^(Charging|NotCharging|Discharging)$ ]] && (( now - lt >= notify_interval_minutes * 60 )); then
                     notify-send -a "Power Notify" -t 5000 -r 5 -u critical -i "battery-full-charging-symbolic" \
-                        "Battery Full" "Please unplug your charger."
+                        "Battery Full" "Please unplug your charger"
                     prev_status="Full"
                     lt=$now
                     $execute_charging
