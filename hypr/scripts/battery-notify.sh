@@ -183,7 +183,7 @@ fn_status() {
                 local now=$(date +%s)
                 if [[ "$prev_status" =~ ^(Charging|NotCharging|Discharging)$ ]] && (( now - lt >= notify_interval_minutes * 60 )); then
                     notify-send -a "Power Notify" -t 5000 -r 5 -u critical -i "battery-full-charging-symbolic" \
-                        "Battery Full" "Please unplug your charger"
+                        "Battery Full" "Please unplug the charger"
                     prev_status="Full"
                     lt=$now
                     $execute_charging
