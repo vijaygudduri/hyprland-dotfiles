@@ -42,7 +42,7 @@
       chmod +x ~/.config/hypr/scripts/*
       ```
 
-6.  **Apply themes from nwg-look**
+6.  **Apply themes from nwg-look (theme is catppuccin mocha, icon theme is tela circle dracula and cursor theme is bibata modern ice)**
 
 7.  **To apply sugar-candy theme on sddm, run below commands**
 
