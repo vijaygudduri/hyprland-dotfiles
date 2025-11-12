@@ -15,11 +15,11 @@
 3.  **Install necessaries**
 
       ```bash      
-      sudo pacman -S --needed nwg-drawer nwg-look waybar swaync polkit-gnome gnome-keyring xdg-desktop-portal-hyprland hypridle hyprlock hyprpaper cliphist socat jq starship network-manager-applet gnome-calculator gnome-text-editor gnome-clocks blueman nautilus libreoffice-fresh telegram-desktop transmission-gtk smplayer swappy evince brightnessctl hyprpicker hyprsunset cachyos-kernel-manager grimblast
+      sudo pacman -S --needed nwg-drawer nwg-look waybar swaync polkit-gnome gnome-keyring xdg-desktop-portal-hyprland hypridle hyprlock hyprpaper wl-clipboard socat jq starship network-manager-applet gnome-calculator gnome-text-editor gnome-clocks blueman nautilus libreoffice-fresh telegram-desktop transmission-gtk smplayer swappy evince brightnessctl hyprpicker hyprsunset cachyos-kernel-manager grimblast
       ```
 
       ```bash
-      paru -S --needed sddm-sugar-candy-git catppuccin-gtk-theme-mocha tela-circle-icon-theme-dracula bibata-cursor-theme visual-studio-code-bin zoom
+      paru -S --needed sddm-sugar-candy-git catppuccin-gtk-theme-mocha tela-circle-icon-theme-dracula bibata-cursor-theme visual-studio-code-bin zoom clipvault-bin
       ```
 
 4.  **Copy the configs from cloned repo to ~/.config**
