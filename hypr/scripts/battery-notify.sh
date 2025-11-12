@@ -67,9 +67,9 @@ fn_status_change() {
                 if (( battery_percentage == lvl )) && [[ ! -f /tmp/.notified_low_$lvl ]]; then
                     touch /tmp/.notified_low_$lvl
                     case $lvl in
-                        20) msg="Battery at 20%. Consider plugging in soon." ;;
-                        15) msg="Battery at 15%. Running low, plug in charger!" ;;
-                        10) msg="Battery at 10%! Seriously low — connect charger immediately!" ;;
+                        20)  msg="Battery at $battery_percentage%. Not critical yet, but maybe start looking for that charger 👀" ;;
+                        15)  msg="Battery at $battery_percentage%. Okay seriously… maybe plug it in before it starts begging 🙏" ;;
+                        10)  msg="Battery at $battery_percentage%! Danger zone! Your laptop is running on pure hope now 😬" ;;
                     esac
                     notify_battery critical "$icon_base" "Battery Low" "$msg"
                 fi
@@ -85,7 +85,7 @@ fn_status_change() {
                         break
                     fi
                     notify_battery critical "xfce4-battery-critical" \
-                        "Battery Critically Low" "$battery_percentage% — Plug in NOW! ⚡"
+                        "Battery Critically Low" "Battery at $battery_percentage% — Plug in Right NOW! ⚡"
                     sleep 1
                 done &
             fi
@@ -102,10 +102,10 @@ fn_status_change() {
                 if (( battery_percentage == lvl )) && [[ ! -f /tmp/.notified_unplug_$lvl ]]; then
                     touch /tmp/.notified_unplug_$lvl
                     case $lvl in
-                        85) msg="Battery at 85%. You can unplug soon to save battery health." ;;
-                        90) msg="Battery at 90%. Ideal point to unplug the charger." ;;
-                        95) msg="Battery at 95%. Avoid overcharging for longer lifespan." ;;
-                        100) msg="Battery fully charged (100%). Please unplug the charger." ;;
+                        85)  msg="Battery at $battery_percentage%. Time to unplug and let it breathe 🌿" ;;
+                        90)  msg="Battery at $battery_percentage%. That's plenty. Give the poor charger a break 😌" ;;
+                        95)  msg="Battery at $battery_percentage%. Overachiever detected. Stop overfeeding it 🍔" ;;
+                        100) msg="Battery fully charged ($battery_percentage%). Unplug me before I turn into a toaster 🔥" ;;
                     esac
                     notify_battery critical "$notify_icon-$step_icon-charging-symbolic" "Battery Charged" "$msg"
                 fi
