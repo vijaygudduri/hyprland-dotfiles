@@ -95,9 +95,9 @@ fn_status_change() {
                 if (( battery_percentage == lvl )) && [[ ! -f /tmp/.notified_low_$lvl ]]; then
                     touch /tmp/.notified_low_$lvl
                     case $lvl in
-                        20)  msg="Battery at $battery_percentage%. This is your early warning tweet, plugin the charger now 📣" ;;
-                        15)  msg="Battery at $battery_percentage%. Okay seriously… maybe plug it in before it starts begging 🙏" ;;
-                        10)  msg="Battery at $battery_percentage%! Red alert! We're entering the last chapter. Save your work! 🚨" ;;
+                        20) msg="Battery at $battery_percentage%. This is your early warning tweet, plugin the charger now 📣" ;;
+                        15) msg="Battery at $battery_percentage%. Okay seriously… maybe plug it in before it starts begging 🙏" ;;
+                        10) msg="Battery at $battery_percentage%! Red alert! We're entering the last chapter. Save your work! 🚨" ;;
                     esac
                     notify_battery critical "$icon_base" "Battery Low" "$msg"
                 fi
@@ -128,9 +128,9 @@ fn_status_change() {
                 if (( battery_percentage == lvl )) && [[ ! -f /tmp/.notified_unplug_$lvl ]]; then
                     touch /tmp/.notified_unplug_$lvl
                     case $lvl in
-                        85)  msg="Battery at $battery_percentage%. The prophecy says: unplug at this point 🧙‍♂️✨" ;;
-                        90)  msg="Battery at $battery_percentage%. Stop now. More charging won't make it smarter 😅" ;;
-                        95)  msg="Battery at $battery_percentage%. That's plenty. Give the poor charger a break 😌" ;;
+                        85) msg="Battery at $battery_percentage%. The prophecy says: unplug at this point 🧙‍♂️✨" ;;
+                        90) msg="Battery at $battery_percentage%. Stop now. More charging won't make it smarter 😅" ;;
+                        95) msg="Battery at $battery_percentage%. That's plenty. Give the poor charger a break 😌" ;;
                         100) msg="Battery fully charged ($battery_percentage%). I'm full, bro… why are we still charging? 😵" ;;
                     esac
                     # 100%-charging exists in Slot, so this works:
