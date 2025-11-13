@@ -25,32 +25,32 @@
     "window-rewrite": {
       "title<.*youtube.*>": "",
       "title<.*WhatsApp.*>": "󰖣",
-      "class<firefox> title<.*github.*>": "",
-      "Brave-browser": "",
-      "smplayer": "",
-      "libreoffice*": "󰏆",
-      "org.gnome.TextEditor": "󱩼",
-      "blueman-manager": "󰂯",
-      "org.gnome.Calculator": "",
-      "org.gnome.clocks": "",
-      "com.transmissionbt.transmission*": "󰦗",
-      "zoom": "",
-      "nm-connection-editor": "󱤚",
-      "nwg-look": "󰁨",
-      "org.gnome.Evince": "󱔘",
-      "kitty": "",
-      "Code": "󰨞",
-      "org.gnome.Nautilus": "",
-      "discord": "󰙯",
-      "org.telegram.desktop": "",
-      "org.gnome.meld":"",
-      "org.pulseaudio.pavucontrol":""
+      "class<Brave-browser> title<.*github.*>": "",
+      "class<Brave-browser>": "",
+      "class<smplayer>": "",
+      "title<.*libreoffice.*>": "",
+      "class<org.gnome.TextEditor>": "󱩼",
+      "class<blueman-manager>": "󰂯",
+      "class<org.gnome.Calculator>": "",
+      "class<org.gnome.clocks>": "",
+      "class<.*transmissionbt.*>": "󰦗",
+      "class<zoom>": "",
+      "class<nm-connection-editor>": "󱤚",
+      "class<nwg-look>": "󰁨",
+      "class<org.gnome.Evince>": "󱔘",
+      "class<kitty>": "",
+      "class<Code>": "󰨞",
+      "class<org.gnome.Nautilus>": "",
+      "class<discord>": "",
+      "class<org.telegram.desktop>": "",
+      "class<org.gnome.meld>":"",
+      "class<org.pulseaudio.pavucontrol>":""
     }
   },
 
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-bluetooth": "{icon} {volume}%",
+    "format-bluetooth": "{icon}   {volume}%",
     "format-muted": " Mute",
     "format-icons": {
         "headphone": "",
@@ -67,12 +67,12 @@
 
 
   "clock": {
-    "format": "{:%a %d %b %I:%M %p}",
+    "format": "{:%a %d %b %H:%M}",
     "tooltip": false
   },
 
   "backlight": {
-    "format": "󰃟 {percent}%",
+    "format": "󰃞  {percent}%",
     "device": "intel_backlight"
   },
 
@@ -90,17 +90,19 @@
 
   "network": {
     "format": "{ifname}",
-    "format-wifi": "󰤢 {essid}({signalStrength}%)",
+    "format-wifi": "󰤢   {essid} ({signalStrength}%)",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-    "format-disconnected": "󰤮 Disconnected", 
+    "format-disconnected": "󰤮   Disconnected", 
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50
   },
 
   "bluetooth": {
-    "format": "󰂯 {status}",
+    // "format": "󰂯 {status}",
+    "format-on": "󰂯 On",
+    "format-off": "󰂯 Off",
     "format-connected": "󰂯 {device_alias}",
-    "format-connected-battery": "󰂯 {device_alias} ({device_battery_percentage}%)",
+    "format-connected-battery": "󰂯  {device_alias}  ({device_battery_percentage}%)",
     "on-click": "blueman-manager"
   },
 
