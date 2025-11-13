@@ -4,7 +4,8 @@
 /* ---------------------------------------------------- */
 
 * {
-  font-family: "JetBrainsMono Nerd Font", monospace;
+  /* font-family: "Cantarell", "JetBrainsMono Nerd Font", monospace; */
+  font-family: FontAwesome;
   font-size: 15px;
   padding: 0px;
   font-weight: 500;
@@ -42,7 +43,6 @@ tooltip label {
 /* Common Module Styling (Pill Shape) */
 /* ---------------------------------------------------- */
 
-#workspaces button,
 #pulseaudio,
 #clock,
 #battery,
@@ -84,11 +84,14 @@ tooltip label {
 }
 
 #workspaces button {
-  padding: 0px 12px;
+  background: rgba(94, 92, 95, 0.15);
+  padding: 0px 14px;
   margin: 0px 2px;
   color: #bfb2d0;
   transition: all 0.3s ease;
+  border-radius: 15px;
   border: 1px solid rgba(100, 100, 120, 0.25);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
 #workspaces button.active {
@@ -158,7 +161,7 @@ tooltip label {
 }
 
 #custom-netspeed {
-  min-width: 90px;
+  min-width: 75px;
 }
 
 /* ===== Power Menu Styling ===== */
