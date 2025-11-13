@@ -32,7 +32,7 @@ get_battery_info() {
 percentage_to_step() {
     local perc=$1
     local step=$(((perc + 5) / 10 * 10))
-    (( step > 100 )) && step=100
+    (( step > 90 )) && step=90             # cap at 90 for better icon compatibility
     (( step < 0 )) && step=0
     echo "$step"
 }
@@ -67,9 +67,9 @@ fn_status_change() {
                 if (( battery_percentage == lvl )) && [[ ! -f /tmp/.notified_low_$lvl ]]; then
                     touch /tmp/.notified_low_$lvl
                     case $lvl in
-                        20)  msg="Battery at $battery_percentage%. Not critical yet, but maybe start looking for that charger 👀" ;;
+                        20)  msg="Battery at $battery_percentage%. This is your early warning tweet, plugin the charger now 📣" ;;
                         15)  msg="Battery at $battery_percentage%. Okay seriously… maybe plug it in before it starts begging 🙏" ;;
-                        10)  msg="Battery at $battery_percentage%! Danger zone! Your laptop is running on pure hope now 😬" ;;
+                        10)  msg="Battery at $battery_percentage%! Red alert! We're entering the last chapter. Save your work! 🚨" ;;
                     esac
                     notify_battery critical "$icon_base" "Battery Low" "$msg"
                 fi
@@ -85,11 +85,10 @@ fn_status_change() {
                         break
                     fi
                     notify_battery critical "xfce4-battery-critical" \
-                        "Battery Critically Low" "Battery at $battery_percentage% — Plug in Right NOW! ⚡"
+                        "Battery Critically Low" "Battery at $battery_percentage% — Just few more mins left, PLUG IN RIGHT NOW! ⚡"
                     sleep 1
                 done &
             fi
-
 
             # Reset unplug flags (for next charge cycle)
             for lvl in "${unplug_thresholds[@]}"; do
@@ -102,10 +101,10 @@ fn_status_change() {
                 if (( battery_percentage == lvl )) && [[ ! -f /tmp/.notified_unplug_$lvl ]]; then
                     touch /tmp/.notified_unplug_$lvl
                     case $lvl in
-                        85)  msg="Battery at $battery_percentage%. Time to unplug and let it breathe 🌿" ;;
-                        90)  msg="Battery at $battery_percentage%. That's plenty. Give the poor charger a break 😌" ;;
-                        95)  msg="Battery at $battery_percentage%. Overachiever detected. Stop overfeeding it 🍔" ;;
-                        100) msg="Battery fully charged ($battery_percentage%). Unplug me before I turn into a toaster 🔥" ;;
+                        85)  msg="Battery at $battery_percentage%. The prophecy says: unplug at this point 🧙‍♂️✨" ;;
+                        90)  msg="Battery at $battery_percentage%. Stop now. More charging won't make it smarter 😅" ;;
+                        95)  msg="Battery at $battery_percentage%. That's plenty. Give the poor charger a break 😌" ;;
+                        100) msg="Battery fully charged ($battery_percentage%). I'm full, bro… why are we still charging? 😵" ;;
                     esac
                     notify_battery critical "$notify_icon-$step_icon-charging-symbolic" "Battery Charged" "$msg"
                 fi
@@ -118,7 +117,6 @@ fn_status_change() {
             ;;
     esac
 }
-
 
 # ────────────────────────────── MAIN ──────────────────────────────
 is_laptop() {
