@@ -10,7 +10,7 @@
 
   // --- Module Layout ---
 
-  "modules-left": ["backlight","pulseaudio","hyprland/workspaces"],
+  "modules-left": ["backlight","pulseaudio","hyprland/workspaces","hyprland/window"],
   "modules-center": ["battery", "clock"],
   "modules-right": ["custom/netspeed", "bluetooth", "custom/notifications", "network", "custom/power"],
 
@@ -21,31 +21,22 @@
     "format-window-separator": "",
     "on-click": "activate",
     "disable-scroll": true,
-    "window-rewrite-default": "",
-    "window-rewrite": {
-      "title<.*youtube.*>": "",
-      "title<.*WhatsApp.*>": "󰖣",
-      "class<Brave-browser> title<.*github.*>": "",
-      "class<Brave-browser>": "",
-      "class<smplayer>": "",
-      "title<.*libreoffice.*>": "",
-      "class<org.gnome.TextEditor>": "󱩼",
-      "class<blueman-manager>": "󰂯",
-      "class<org.gnome.Calculator>": "",
-      "class<org.gnome.clocks>": "",
-      "class<.*transmissionbt.*>": "󰦗",
-      "class<zoom>": "",
-      "class<nm-connection-editor>": "󱤚",
-      "class<nwg-look>": "󰁨",
-      "class<org.gnome.Evince>": "󱔘",
-      "class<kitty>": "",
-      "class<Code>": "󰨞",
-      "class<org.gnome.Nautilus>": "",
-      "class<discord>": "",
-      "class<org.telegram.desktop>": "",
-      "class<org.gnome.meld>":"",
-      "class<org.pulseaudio.pavucontrol>":""
+    "workspace-taskbar": {
+        "enable": true,
+        "update-active-window": true,
+        "format": "{icon}",
+        // "icon-theme": "Adwaita",
+        "icon-size": 24,
+        "on-click-window": "~/.config/hypr/scripts/waybar-focus-window.sh {address} {button}"
     }
+  },
+
+  "hyprland/window": {
+    "format": ":: {initialTitle}",
+    "rewrite": {
+        "(.*) - Brave$": ":: Brave browser"
+    },
+    "separate-outputs": true
   },
 
   "pulseaudio": {
@@ -64,7 +55,6 @@
     "scroll-step": 0.1,
     "ignored-sinks": ["Easy Effects Sink"]
   },
-
 
   "clock": {
     "format": "{:%a %d %b %H:%M}",
