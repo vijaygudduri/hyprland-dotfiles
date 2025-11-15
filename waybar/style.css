@@ -51,10 +51,11 @@ tooltip label {
 #backlight,
 #custom-power,
 #custom-netspeed,
-#custom-notifications {
+#custom-notifications 
+{
   /* background: rgba(120, 102, 172, 0.15);  */
   background: rgba(94, 92, 95, 0.15);
-  border-radius: 12px;
+  border-radius: 15px;
   padding: 0px 8px;
   margin: 0 4px;
   border: 1px solid rgba(162, 119, 255, 0.25);
@@ -71,7 +72,8 @@ tooltip label {
 #custom-notifications:hover,
 /* #custom-power:hover, */
 #workspaces button:hover,
-#bluetooth:hover {
+#bluetooth:hover 
+{
   background: rgba(162, 119, 255, 0.35);
   color: #fff;
 }
@@ -109,19 +111,19 @@ tooltip label {
 }
 
 #workspaces .taskbar-window image {
-    margin-top: 1px;
+  margin-top: 1px;
 }
 
 /* Window Styling */
 #window {
-    border-radius: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* make window module transparent when no windows present */
 window#waybar.empty #window {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 /* Specific module colors */
@@ -166,7 +168,9 @@ window#waybar.empty #window {
   color: #59faaf;
   font-size: 20px;
   transition: background 0.2s;
-  padding: 0px 15px;
+  /* padding: 0px 15px; */
+  min-width: 25px;
+  padding-right: 12px;      /* fixes icon slightly leaning towards right */
 }
 
 /* Power button styling */
@@ -174,7 +178,9 @@ window#waybar.empty #window {
   color: rgb(250, 97, 97);
   font-size: 23px;
   transition: background 0.2s;
-  padding: 0px 15px;
+  /* padding: 0px 15px; */
+  min-width: 25px;
+  padding-right: 10px;      /* fixes icon slightly leaning towards right */
 }
 
 #custom-netspeed {
