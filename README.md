@@ -19,7 +19,7 @@
       ```
 
       ```bash
-      paru -S --needed sddm-sugar-candy-git catppuccin-gtk-theme-mocha tela-circle-icon-theme-dracula bibata-cursor-theme visual-studio-code-bin zoom clipvault-bin
+      paru -S --needed sddm-sugar-candy-git catppuccin-gtk-theme-mocha bibata-cursor-theme visual-studio-code-bin zoom clipvault-bin
       ```
 
 4.  **Copy the configs from cloned repo to ~/.config**
@@ -42,7 +42,7 @@
       chmod +x ~/.config/hypr/scripts/*
       ```
 
-6.  **Apply themes from nwg-look (theme is 'catppuccin mocha', icon theme is 'tela circle dracula' and cursor theme is 'bibata modern ice')**
+6.  **Apply themes from nwg-look (theme is 'catppuccin mocha' and cursor theme is 'bibata modern ice')**
 
 7.  **To apply sugar-candy theme on sddm, run below commands**
 
