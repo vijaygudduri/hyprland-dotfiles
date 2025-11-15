@@ -11,7 +11,7 @@
   // --- Module Layout ---
 
   "modules-left": ["backlight","pulseaudio","hyprland/workspaces","hyprland/window"],
-  "modules-center": ["battery", "clock"],
+  "modules-center": ["cava","battery", "clock"],
   "modules-right": ["custom/netspeed", "bluetooth", "custom/notifications", "network", "custom/power"],
 
   // --- Module Definitions ---
@@ -92,7 +92,7 @@
     "format-on": "󰂯 On",
     "format-off": "󰂯 Off",
     "format-connected": "󰂯 {device_alias}",
-    "format-connected-battery": "󰂯  {device_alias}  ({device_battery_percentage}%)",
+    "format-connected-battery": " {device_alias} ({device_battery_percentage}%)",
     "on-click": "blueman-manager"
   },
 
