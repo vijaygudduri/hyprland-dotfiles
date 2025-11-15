@@ -165,6 +165,9 @@ trap _cleanup SIGINT SIGTERM
 main() {
     is_laptop
 
+    # Remove stale flags left by kill -9 or previous crash
+    rm -f /tmp/.notified_low_* /tmp/.notified_unplug_* /tmp/.notified_critical_* /tmp/.notified_charged_* 2>/dev/null
+
     battery_dbus_path=$(upower -e | grep battery | head -n 1)
     [[ -z "$battery_dbus_path" ]] && exit 1
 
