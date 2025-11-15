@@ -11,7 +11,7 @@
   // --- Module Layout ---
 
   "modules-left": ["backlight","pulseaudio","hyprland/workspaces","hyprland/window"],
-  "modules-center": ["cava","battery", "clock"],
+  "modules-center": ["battery", "clock"],
   "modules-right": ["custom/netspeed", "bluetooth", "custom/notifications", "network", "custom/power"],
 
   // --- Module Definitions ---
@@ -62,8 +62,9 @@
   },
 
   "backlight": {
-    "format": "󰃞  {percent}%",
-    "device": "intel_backlight"
+    "device": "intel_backlight",
+    "format": "{icon}  {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"]
   },
 
   "battery": {
