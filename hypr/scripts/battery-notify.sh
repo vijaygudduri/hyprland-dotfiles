@@ -11,9 +11,9 @@ fi
 unplug_thresholds=(85 90 95 100)
 low_thresholds=(20 15 10)
 critical_threshold=5
-notify_icon="battery-level"
 
 # ────────────────────────────── HELPERS ──────────────────────────────
+
 get_battery_info() {
     local total_pct=0 count=0
     for battery in /sys/class/power_supply/BAT*; do
@@ -29,105 +29,134 @@ get_battery_info() {
     battery_percentage=$((total_pct / count))
 }
 
-percentage_to_step() {
+# Round % to nearest 10% step (GNOME/Tela standard)
+battery_step_icon() {
     local perc=$1
-    local step=$(((perc + 5) / 10 * 10))
-    (( step > 90 )) && step=90             # cap at 90 for better icon compatibility
+    local step=$(( (perc + 5) / 10 * 10 ))
+    (( step > 100 )) && step=100
     (( step < 0 )) && step=0
     echo "$step"
 }
 
 notify_battery() {
-    local urgency=$1
-    local icon=$2
-    local title=$3
-    local msg=$4
-    notify-send -a "Power Notify" -t 5000 -u "$urgency" -i "$icon" "$title" "$msg"
+    notify-send -t 5000 -u "$1" -i "$2" "$3" "$4"
 }
 
-# ────────────────────────────── LOGIC ──────────────────────────────
+# ────────────────────────────── MAIN LOGIC ──────────────────────────────
+
 fn_status_change() {
     get_battery_info
+    icon_step=$(battery_step_icon "$battery_percentage")
 
-    local step_icon=$(percentage_to_step "$battery_percentage")
-    local icon_base="$notify_icon-$step_icon-symbolic"
-
-    # Only notify once when transitioning from non-Discharging to Discharging
+    # Plug/unplug notifications (with direct inline icon)
     if [[ "$battery_status" == "Discharging" && "$last_status" != "Discharging" && -n "$last_status" ]]; then
-        notify_battery normal "$icon_base" "Charger Unplugged" "Battery at $battery_percentage%"
+        notify_battery normal "battery-level-$icon_step-symbolic" \
+            "Charger Unplugged" "Battery at $battery_percentage%"
     elif [[ "$battery_status" != "Discharging" && "$last_status" == "Discharging" ]]; then
-        notify_battery normal "$notify_icon-$step_icon-charging-symbolic" "Charger Plugged In" "Battery at $battery_percentage%"
+        notify_battery normal "battery-level-$icon_step-plugged-in-symbolic" \
+            "Charger Plugged In" "Battery at $battery_percentage%"
     fi
+
     last_status="$battery_status"
 
     case "$battery_status" in
+
+        # ──────────────────────────── DISCHARGING ────────────────────────────
         Discharging)
-            # Low battery fixed points
+
+            # Low battery fixed notifications
             for lvl in "${low_thresholds[@]}"; do
                 if (( battery_percentage == lvl )) && [[ ! -f /tmp/.notified_low_$lvl ]]; then
                     touch /tmp/.notified_low_$lvl
+
                     case $lvl in
-                        20)  msg="Battery at $battery_percentage%. This is your early warning tweet, plugin the charger now 📣" ;;
-                        15)  msg="Battery at $battery_percentage%. Okay seriously… maybe plug it in before it starts begging 🙏" ;;
-                        10)  msg="Battery at $battery_percentage%! Red alert! We're entering the last chapter. Save your work! 🚨" ;;
+                        20)
+                            msg="Battery at $battery_percentage%. This is your early warning, plugin the charger now 📣"
+                            notify_icon="battery-level-20-symbolic"
+                            ;;
+                        15)
+                            msg="Battery at $battery_percentage%. Please plugin the charger bro, I'm begging 🙏"
+                            notify_icon="battery-level-10-symbolic"
+                            ;;
+                        10)
+                            msg="Battery at $battery_percentage%! Red alert! We're entering the last chapter. Save your work! 🚨"
+                            notify_icon="battery-level-0-symbolic"
+                            ;;
                     esac
-                    notify_battery critical "$icon_base" "Battery Low" "$msg"
+
+                    notify_battery critical "$notify_icon" "Battery Low" "$msg"
                 fi
             done
 
-            # Critical repeated alert loop
-            if (( battery_percentage <= critical_threshold )) && [[ "$battery_status" == "Discharging" ]]; then
-                echo "Entering critical loop at ${battery_percentage}%..."
+            # Critical loop (every second)
+            if (( battery_percentage <= critical_threshold )); then
                 while true; do
                     get_battery_info
                     if [[ "$battery_status" != "Discharging" ]] || (( battery_percentage > critical_threshold )); then
-                        echo "Exiting critical loop — charging or above threshold."
                         break
                     fi
-                    notify_battery critical "xfce4-battery-critical" \
-                        "Battery Critically Low" "Battery at $battery_percentage% — Just few more mins left, PLUG IN RIGHT NOW! ⚡"
-                    sleep 1
+
+                    notify_battery critical "battery-level-0-symbolic" \
+                        "Battery Critically Low" \
+                        "Battery at $battery_percentage% — Just few more mins left, PLUG IN RIGHT NOW! ⚡"
+
+                    sleep 2
                 done &
             fi
 
-            # Reset unplug flags (for next charge cycle)
+            # Reset unplug flags when discharging
             for lvl in "${unplug_thresholds[@]}"; do
-                rm -f /tmp/.notified_unplug_$lvl 2>/dev/null
+                rm -f /tmp/.notified_unplug_$lvl
             done
             ;;
+
+        # ─────────────────────────── CHARGING ─────────────────────────────
         Charging|NotCharging|Unknown)
-            # Unplug charger fixed points
+
+            # Unplug charger fixed notifications
             for lvl in "${unplug_thresholds[@]}"; do
                 if (( battery_percentage == lvl )) && [[ ! -f /tmp/.notified_unplug_$lvl ]]; then
                     touch /tmp/.notified_unplug_$lvl
+
                     case $lvl in
-                        85)  msg="Battery at $battery_percentage%. The prophecy says: unplug at this point 🧙‍♂️✨" ;;
-                        90)  msg="Battery at $battery_percentage%. Stop now. More charging won't make it smarter 😅" ;;
-                        95)  msg="Battery at $battery_percentage%. That's plenty. Give the poor charger a break 😌" ;;
-                        100) msg="Battery fully charged ($battery_percentage%). I'm full, bro… why are we still charging? 😵" ;;
+                        85)
+                            msg="Battery at $battery_percentage%. The prophecy says: unplug at this point 🧙‍♂️✨"
+                            icon="battery-level-80-charging-symbolic"
+                            ;;
+                        90)
+                            msg="Battery at $battery_percentage%. Stop now. More charging won't make it smarter 😅"
+                            icon="battery-level-90-charging-symbolic"
+                            ;;
+                        95)
+                            msg="Battery at $battery_percentage%. That's plenty. Give the poor charger a break 😌"
+                            icon="battery-level-90-charging-symbolic"
+                            ;;
+                        100)
+                            msg="Battery fully charged ($battery_percentage%). I'm full, bro… why are we still charging? 😵"
+                            icon="battery-level-100-charged-symbolic"
+                            ;;
                     esac
-                    notify_battery critical "$notify_icon-$step_icon-charging-symbolic" "Battery Charged" "$msg"
+
+                    notify_battery critical "$icon" "Battery Charged" "$msg"
                 fi
             done
 
-            # Reset low flags
+            # Reset low battery flags when charging
             for lvl in "${low_thresholds[@]}"; do
-                rm -f /tmp/.notified_low_$lvl 2>/dev/null
+                rm -f /tmp/.notified_low_$lvl
             done
             ;;
+
     esac
 }
 
-# ────────────────────────────── MAIN ──────────────────────────────
+# ────────────────────────────── INIT ──────────────────────────────
+
 is_laptop() {
-    ls /sys/class/power_supply/BAT* >/dev/null 2>&1 || {
-        echo "No battery detected. Exiting." >&2
-        exit 0
-    }
+    ls /sys/class/power_supply/BAT* >/dev/null 2>&1 || exit 0
 }
 
 _cleanup() {
-    echo "Stopping battery notifier..."
     rm -f /tmp/.notified_low_* /tmp/.notified_unplug_*
     exit
 }
@@ -137,15 +166,12 @@ main() {
     is_laptop
 
     battery_dbus_path=$(upower -e | grep battery | head -n 1)
-    if [[ -z "$battery_dbus_path" ]]; then
-        echo "No D-Bus battery path found. Exiting."
-        exit 1
-    fi
+    [[ -z "$battery_dbus_path" ]] && exit 1
 
-    echo "Monitoring battery D-Bus events on $battery_dbus_path"
-    stdbuf -oL dbus-monitor --system "type='signal',interface='org.freedesktop.DBus.Properties',path='$battery_dbus_path'" |
-    grep --line-buffered -E "Percentage|State" |
-    while read -r _; do
+    stdbuf -oL dbus-monitor --system \
+        "type='signal',interface='org.freedesktop.DBus.Properties',path='$battery_dbus_path'" \
+    | grep --line-buffered -E "Percentage|State" \
+    | while read -r _; do
         fn_status_change
     done
 }
