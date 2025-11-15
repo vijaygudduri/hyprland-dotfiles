@@ -79,10 +79,10 @@
       nmcli con up 'Android'
       ```
 
-12.  **Switch to sudo and add starship config in fish**
+12.  **Add starship config and modify ls alias in fish**
 
       ```bash
-      echo 'starship init fish | source' >> /usr/share/cachyos-fish-config/cachyos-config.fish
+      echo -e "alias ls='eza --color=always --group-directories-first --icons'\nstarship init fish | source" >> ~/.config/fish/config.fish
       ```
 
 ***Reboot after all the process is done***
