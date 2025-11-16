@@ -87,7 +87,8 @@ tooltip label {
 
 #workspaces button {
   background: rgba(94, 92, 95, 0.15);
-  padding: 0px 10px;
+  padding: 0px 8px;
+  min-width: 35px;
   margin: 0px 2px;
   color: #bfb2d0;
   transition: all 0.3s ease;
@@ -112,18 +113,6 @@ tooltip label {
 
 #workspaces .taskbar-window image {
   margin-top: 1px;
-}
-
-/* Window Styling */
-#window {
-  border-radius: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-/* make window module transparent when no windows present */
-window#waybar.empty #window {
-  background-color: transparent;
 }
 
 /* Specific module colors */
