@@ -10,7 +10,7 @@
 
   // --- Module Layout ---
 
-  "modules-left": ["backlight","pulseaudio","hyprland/workspaces","hyprland/window"],
+  "modules-left": ["backlight","pulseaudio","hyprland/workspaces"],
   "modules-center": ["battery", "clock"],
   "modules-right": ["custom/netspeed", "bluetooth", "custom/notifications", "network", "custom/power"],
 
@@ -30,15 +30,7 @@
         "on-click-window": "~/.config/hypr/scripts/waybar-focus-window.sh {address} {button}"
     }
   },
-
-  "hyprland/window": {
-    "format": ":: {initialTitle}",
-    "rewrite": {
-        "(.*) - Brave$": ":: Brave browser"
-    },
-    "separate-outputs": true
-  },
-
+  
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-bluetooth": "{icon}   {volume}%",
