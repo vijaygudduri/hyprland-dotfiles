@@ -29,7 +29,7 @@
       ```
 
       ```bash
-      cp -r hypr kitty fastfetch swaync systemd waybar brave-flags.conf ~/.config/
+      cp -r hypr kitty fastfetch swaync systemd waybar nwg-drawer brave-flags.conf ~/.config/
       ```
       
       ```bash
