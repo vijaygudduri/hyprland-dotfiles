@@ -8,7 +8,7 @@ if ! flock -n 9; then
 fi
 
 # ────────────────────────────── CONFIG ──────────────────────────────
-unplug_thresholds=(85 90 95 100)
+unplug_thresholds=(80 85 90 95 100)
 low_thresholds=(20 15 10)
 critical_threshold=5
 
@@ -88,7 +88,7 @@ fn_status_change() {
                 fi
             done
 
-            # Critical loop (every second)
+            # Critical loop (every 2 seconds)
             if (( battery_percentage <= critical_threshold )); then
                 while true; do
                     get_battery_info
@@ -119,8 +119,12 @@ fn_status_change() {
                     touch /tmp/.notified_unplug_$lvl
 
                     case $lvl in
-                        85)
+                        80)
                             msg="Battery at $battery_percentage%. The prophecy says: unplug at this point 🧙‍♂️✨"
+                            icon="battery-level-80-charging-symbolic"
+                            ;;
+                        85)
+                            msg="Battery at $battery_percentage%. Please unplug the charger bro ✨"
                             icon="battery-level-80-charging-symbolic"
                             ;;
                         90)
