@@ -118,9 +118,8 @@
       {
         "label": "",
         "type": "toggle",
-        "active": true,
-        "command": "systemctl --user $([[ $SWAYNC_TOGGLE_STATE == true ]] && echo start || echo stop) hyprsunset.service",
-        "update-command": "systemctl --user is-active --quiet hyprsunset.service && echo true || echo false"
+        "command": "[[ $SWAYNC_TOGGLE_STATE == true ]] && hyprsunset --temperature 6000 || pkill -INT hyprsunset",
+        "update-command": "pgrep -x hyprsunset >/dev/null && echo true || echo false"
       }
     ]
    }
