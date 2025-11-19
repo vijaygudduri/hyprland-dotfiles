@@ -126,7 +126,7 @@ tooltip label {
 }
 
 #backlight {
-  color: #fde680; /* Light green */
+  color: #c3fd80; /* Light green */
 }
 
 #battery {
@@ -146,7 +146,7 @@ tooltip label {
 }
 
 #bluetooth {
-  color: #9583fd; 
+  color: #e9fd92; 
 }
 
 #network {
@@ -154,7 +154,7 @@ tooltip label {
 }
 
 #custom-notifications {
-  color: #59faaf;
+  color: #c286fa;
   font-size: 20px;
   transition: background 0.2s;
   /* padding: 0px 15px; */
