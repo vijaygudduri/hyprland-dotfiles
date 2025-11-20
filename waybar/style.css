@@ -118,19 +118,19 @@ tooltip label {
 /* Specific module colors */
 
 #pulseaudio {
-  color: #85dafc; /* Light blue */
+  color: #74d6fd; /* Light blue */
 }
 
 #clock {
-  color: #f884d5; /* White */
+  color: #fd78d5; /* White */
 }
 
 #backlight {
-  color: #c3fd80; /* Light green */
+  color: #bbfd6f; /* Light green */
 }
 
 #battery {
-  color: #8bfa8b; /* Light green */
+  color: #7cfc7c; /* Light green */
 }
 
 #battery.good {
@@ -138,7 +138,7 @@ tooltip label {
 }
 
 #battery.warning {
-  color: #f8975e;
+  color: #fda470;
 }
 
 #battery.critical {
@@ -146,15 +146,15 @@ tooltip label {
 }
 
 #bluetooth {
-  color: #e9fd92; 
+  color: #7cfcf1;
 }
 
 #network {
-  color: #7cfcf1; 
+  color: #e9ff87; 
 }
 
 #custom-notifications {
-  color: #c286fa;
+  color: #be7cfc;
   font-size: 20px;
   transition: background 0.2s;
   /* padding: 0px 15px; */
