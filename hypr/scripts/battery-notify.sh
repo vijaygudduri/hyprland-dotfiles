@@ -8,7 +8,7 @@ if ! flock -n 9; then
 fi
 
 # ────────────────────────────── CONFIG ──────────────────────────────
-unplug_thresholds=(80 85 90 95 100)
+unplug_thresholds=(30 31 32 33 34)
 low_thresholds=(20 15 10)
 critical_threshold=5
 
@@ -70,25 +70,51 @@ fn_status_change() {
                     touch /tmp/.notified_low_$lvl
 
                     case $lvl in
-                        20)
-                            msg="Battery at $battery_percentage%. This is your early warning, plugin the charger now 📣"
-                            notify_icon="battery-level-20-symbolic"
-                            ;;
-                        15)
-                            msg="Battery at $battery_percentage%. Please plugin the charger bro, I'm begging 🙏"
-                            notify_icon="battery-level-10-symbolic"
-                            ;;
-                        10)
-                            msg="Battery at $battery_percentage%! Red alert! We're entering the last chapter. Save your work! 🚨"
-                            notify_icon="battery-level-0-symbolic"
-                            ;;
-                    esac
 
-                    notify_battery critical "$notify_icon" "Battery Low" "$msg"
+                    20)
+                        notify_icon="battery-level-20-symbolic"
+                        msgs=(
+                            "Battery at 20%. Early warning! Plug in now before things get emotional 📣"
+                            "Battery at 20% — bro... it's not too late. Charger connect chey 🪫➡️⚡"
+                            "Battery at 20%! Power is fading like your hopes on Monday morning 😭"
+                            "Battery at 20%. Respect boundaries. Give charger 😤"
+                            "Battery at 20%. Time to stop scrolling memes and plug in 📵⚡"
+                        )
+                        ;;
+
+                    15)
+                        notify_icon="battery-level-10-symbolic"
+                        msgs=(
+                            "Battery at 15%! Bro please… I'm literally gasping for electrons 🙏"
+                            "Battery at 15%. Even your phone charges more responsibly 😒"
+                            "Battery at 15%! We are entering danger zone. Charger ekkada? 🚨"
+                            "Battery at 15%. I am dying like your weekend plans 💀"
+                            "Battery at 15%… why are you like this? Plug-in chey anna 😩"
+                        )
+                        ;;
+
+                    10)
+                        notify_icon="battery-level-0-symbolic"
+                        msgs=(
+                            "Battery at 10%! Red alert. Countdown started! Save your work! 🚨"
+                            "Battery at 10%. Next step: shutdown. Don’t test me 😡"
+                            "Battery at 10%! Bro… if you don’t plug in now, I’ll embarrass you with a hard shutdown 😭"
+                            "Battery at 10%. This is your FINAL warning. MOVE! ⚡"
+                            "Battery at 10%. I can see the light… plug me before I go 🕯️"
+                        )
+                        ;;
+
+                esac
+
+                # Pick random message
+                msg="${msgs[$RANDOM % ${#msgs[@]}]}"
+
+                notify_battery critical "$notify_icon" "Battery Low" "$msg"
+
                 fi
             done
 
-            # Critical loop (every 2 seconds)
+            # Critical loop (every second)
             if (( battery_percentage <= critical_threshold )); then
                 while true; do
                     get_battery_info
@@ -113,37 +139,77 @@ fn_status_change() {
         # ─────────────────────────── CHARGING ─────────────────────────────
         Charging|NotCharging|Unknown)
 
-            # Unplug charger fixed notifications
+            # Unplug charger notifications with random messages
             for lvl in "${unplug_thresholds[@]}"; do
                 if (( battery_percentage == lvl )) && [[ ! -f /tmp/.notified_unplug_$lvl ]]; then
                     touch /tmp/.notified_unplug_$lvl
 
                     case $lvl in
+
                         80)
-                            msg="Battery at $battery_percentage%. The prophecy says: unplug at this point 🧙‍♂️✨"
                             icon="battery-level-80-charging-symbolic"
+                            msgs=(
+                                "Battery reached 80%. Ideal unplug point. Trust the science 🧪⚡"
+                                "Battery reached 80%! Time to disconnect. Don’t overfeed me 😌"
+                                "Battery reached 80% — the golden zone. Unplug chey bro ✋"
+                                "Battery reached 80%. Charging from here is like overeating after you're full 😅"
+                                "Battery reached 80%! Healthy battery habits start here. Remove charger 🚫⚡"
+                            )
                             ;;
+
                         85)
-                            msg="Battery at $battery_percentage%. Please unplug the charger bro ✨"
                             icon="battery-level-80-charging-symbolic"
+                            msgs=(
+                                "Battery reached 85%. Enough bro, unplug now ✨"
+                                "Battery reached 85%. I’m good. Remove charger and let me breathe 😮‍💨"
+                                "Battery reached 85%! Continuing to charge won’t give me superpowers 😂"
+                                "Battery reached 85%. Charger ki leave ivvu once 😌"
+                                "Battery reached 85%. Overcharging will age me faster than stress ages humans 😭"
+                            )
                             ;;
+
                         90)
-                            msg="Battery at $battery_percentage%. Stop now. More charging won't make it smarter 😅"
                             icon="battery-level-90-charging-symbolic"
+                            msgs=(
+                                "Battery reached 90%. Beyond this is extra fat… remove charger 😅"
+                                "Battery reached 90%! Even your phone charges less aggressively 😂 Unplug now."
+                                "Battery reached 90%. Stop making me eat like it's Diwali 🪔😩"
+                                "Battery reached 90%. Leave some space, unplug the charger 😤"
+                                "Battery reached 90%. Bro why are you still charging? 😭"
+                            )
                             ;;
+
                         95)
-                            msg="Battery at $battery_percentage%. That's plenty. Give the poor charger a break 😌"
                             icon="battery-level-90-charging-symbolic"
+                            msgs=(
+                                "Battery reached 95%. Enough anna, unplug before I explode with happiness 😌"
+                                "Battery reached 95%. This is more than enough. Disconnect ⚡"
+                                "Battery reached 95%! You're charging me like I'm going to war 😅 Unplug now."
+                                "Battery reached 95%. Give the poor charger a break 😪"
+                                "Battery reached 95%! Another 5% won’t change your life bro 😆"
+                            )
                             ;;
+
                         100)
-                            msg="Battery fully charged ($battery_percentage%). I'm full, bro… why are we still charging? 😵"
                             icon="battery-level-100-charged-symbolic"
+                            msgs=(
+                                "Battery reached 100%! Fully charged. Why are we still attached? 😵"
+                                "Battery reached 100%! Unplug before I start sending emotional damage 😭"
+                                "Battery reached 100%. Full charge achieved. Mission accomplished soldier 🫡⚡"
+                                "Battery reached 100%. Bro please… disconnect. I’m literally overflowing 😣"
+                                "Battery reached 100%! Keeping the charger now is illegal in 7 countries 🚓"
+                            )
                             ;;
+
                     esac
+
+                    # pick random
+                    msg="${msgs[$RANDOM % ${#msgs[@]}]}"
 
                     notify_battery critical "$icon" "Battery Charged" "$msg"
                 fi
             done
+
 
             # Reset low battery flags when charging
             for lvl in "${low_thresholds[@]}"; do
