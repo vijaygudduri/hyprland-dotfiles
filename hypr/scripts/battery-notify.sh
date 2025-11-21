@@ -8,7 +8,7 @@ if ! flock -n 9; then
 fi
 
 # ────────────────────────────── CONFIG ──────────────────────────────
-unplug_thresholds=(30 31 32 33 34)
+unplug_thresholds=(80 85 90 95 100)
 low_thresholds=(20 15 10)
 critical_threshold=5
 
