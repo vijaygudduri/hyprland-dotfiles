@@ -6,6 +6,15 @@ LOG="$HOME/.cache/autoswitch.log"
 PIDFILE="$HOME/.cache/autoswitch.pid"
 SOCKET="${XDG_RUNTIME_DIR}/hypr/${HYPRLAND_INSTANCE_SIGNATURE}/.socket2.sock"
 
+# ── LOG ROTATION: Keep only last 250 log entries ───────────────────────────
+if [ -f "$LOG" ]; then
+    line_count=$(wc -l < "$LOG")
+    if (( line_count > 250 )); then
+        tail -n 250 "$LOG" > "${LOG}.tmp" && mv "${LOG}.tmp" "$LOG"
+        echo "$(date): LOG ROTATION: logs trimmed (previous $line_count lines)" >> "$LOG"
+    fi
+fi
+
 # Dependency check
 for cmd in hyprctl jq socat; do
   if ! command -v "$cmd" &>/dev/null; then
