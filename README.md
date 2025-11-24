@@ -85,4 +85,18 @@
       echo -e "alias ls='eza --color=always --group-directories-first --icons'\nstarship init fish | source" >> ~/.config/fish/config.fish
       ```
 
+13.  **Copy brave-browser.desktop to .local and add flags**
+
+      ```bash
+      cp /usr/share/applications/brave-browser.desktop ~/.local/share/applications/
+      ```
+
+      ```bash
+      sed -i '
+      s|^Exec=brave %u|Exec=brave --enable-features=VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE,UseOzonePlatform --ozone-platform=x11 --ignore-gpu-blocklist --        enable-gpu-rasterization --password-store=gnome %u|;
+      s|^Exec=brave$|Exec=brave --enable-features=VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE,UseOzonePlatform --ozone-platform=x11 --ignore-gpu-blocklist --          enable-gpu-rasterization --password-store=gnome|;
+      s|^Exec=brave --incognito|Exec=brave --enable-features=VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE,UseOzonePlatform --ozone-platform=x11 --ignore-gpu-           blocklist --enable-gpu-rasterization --password-store=gnome --incognito|
+      ' ~/.local/share/applications/brave-browser.desktop
+      ```
+
 ***Reboot after all the process is done***
