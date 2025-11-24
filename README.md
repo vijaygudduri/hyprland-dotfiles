@@ -39,7 +39,7 @@
 5.  **Make all the scripts executable**
 
       ```bash
-      chmod +x ~/.config/hypr/scripts/*
+      chmod +x ~/.config/hypr/scripts/*.sh
       ```
 
 6.  **Apply themes from nwg-look (theme is 'catppuccin mocha' and cursor theme is 'bibata modern ice')**
