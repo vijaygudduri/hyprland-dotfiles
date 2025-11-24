@@ -93,9 +93,9 @@
 
       ```bash
       sed -i '
-      s|^Exec=brave %U|Exec=brave --enable-features=VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE,UseOzonePlatform --ozone-platform=x11 --ignore-gpu-blocklist --        enable-gpu-rasterization --password-store=gnome %U|;
-      s|^Exec=brave$|Exec=brave --enable-features=VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE,UseOzonePlatform --ozone-platform=x11 --ignore-gpu-blocklist --          enable-gpu-rasterization --password-store=gnome|;
-      s|^Exec=brave --incognito|Exec=brave --enable-features=VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE,UseOzonePlatform --ozone-platform=x11 --ignore-gpu-           blocklist --enable-gpu-rasterization --password-store=gnome --incognito|
+      s|^Exec=brave %U|Exec=brave --enable-features=VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE,UseOzonePlatform --ozone-platform=x11 --ignore-gpu-blocklist --enable-gpu-rasterization --password-store=gnome %U|;
+      s|^Exec=brave$|Exec=brave --enable-features=VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE,UseOzonePlatform --ozone-platform=x11 --ignore-gpu-blocklist --enable-gpu-rasterization --password-store=gnome|;
+      s|^Exec=brave --incognito|Exec=brave --enable-features=VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE,UseOzonePlatform --ozone-platform=x11 --ignore-gpu-blocklist --enable-gpu-rasterization --password-store=gnome --incognito|
       ' ~/.local/share/applications/brave-browser.desktop
       ```
 
