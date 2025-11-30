@@ -1,14 +1,13 @@
-
 {
   // --- General Waybar Settings ---
   
-  "layer": "top",
+  // "layer": "top",
   "position": "top",
+  // "margin-top": 3,
+  // "margin-bottom": 2,
   "margin-left": 10,
   "margin-right": 10,
-  "margin-top": 3,
-  "margin-bottom": 2,
-  "height" : 36,
+  "height" : 38,
 
   // --- Module Layout ---
 
