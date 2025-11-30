@@ -1,6 +1,5 @@
-
 #!/usr/bin/env bash
-#
+
 # Standalone Fastfetch logo helper
 # Uses logos from ~/.config/fastfetch/logo
 
