@@ -1,4 +1,3 @@
-
 /* ---------------------------------------------------- */
 /* Global Settings */
 /* ---------------------------------------------------- */
@@ -19,7 +18,9 @@
 /* ---------------------------------------------------- */
 
 window#waybar {
-  background: rgba(19, 19, 26, 0.75);
+  background: rgba(10, 10, 12, 0.75);
+  /* background: transparent */
+  /* background: rgba(0,0,0,0.7); */
 }
 
 /* Tooltip */
@@ -54,12 +55,12 @@ tooltip label {
 #custom-notifications 
 {
   /* background: rgba(120, 102, 172, 0.15);  */
-  background: rgba(94, 92, 95, 0.15);
+  background: rgba(27, 27, 27, 0.75);
   border-radius: 15px;
   padding: 0px 8px;
   margin: 0 4px;
-  border: 1px solid rgba(162, 119, 255, 0.25);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(124, 124, 124, 0.25);
+  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35); */
 }
 
 /* Subtle hover highlight for most modules */
@@ -86,7 +87,7 @@ tooltip label {
 }
 
 #workspaces button {
-  background: rgba(94, 92, 95, 0.15);
+  background: rgba(27, 27, 27, 0.75);
   padding: 0px 8px;
   min-width: 30px;
   margin: 0px 2px;
