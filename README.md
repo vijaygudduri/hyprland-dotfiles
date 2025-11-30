@@ -29,7 +29,7 @@
       ```
 
       ```bash
-      cp -r hypr kitty fastfetch swaync systemd waybar nwg-drawer brave-flags.conf ~/.config/
+      cp -r hypr kitty fastfetch swaync systemd waybar nwg-drawer ~/.config/
       ```
       
       ```bash
@@ -85,7 +85,7 @@
       echo -e "alias ls='eza --color=always --group-directories-first --icons'\nstarship init fish | source" >> ~/.config/fish/config.fish
       ```
 
-13.  **(ignore this step) Copy brave-browser.desktop to .local and add flags**
+13.  **Copy brave-browser.desktop to .local and add flags**
 
       ```bash
       cp /usr/share/applications/brave-browser.desktop ~/.local/share/applications/
