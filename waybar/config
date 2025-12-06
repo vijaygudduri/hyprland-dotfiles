@@ -1,8 +1,7 @@
 {
   // --- General Waybar Settings ---
-  
-  // "layer": "top",
-  // "position": "top",
+  "position": "top",
+  "layer": "bottom",
   "margin-top": 3,
   "margin-bottom": 2,
   "margin-left": 10,
@@ -11,7 +10,7 @@
 
   // --- Module Layout ---
 
-  "modules-left": ["backlight","pulseaudio","hyprland/workspaces"],
+  "modules-left": ["backlight","pulseaudio", "load", "hyprland/workspaces"],
   "modules-center": ["battery", "clock"],
   "modules-right": ["custom/netspeed", "bluetooth", "custom/notifications", "network", "custom/power"],
 
@@ -30,6 +29,11 @@
         "icon-size": 24,
         "on-click-window": "~/.config/hypr/scripts/waybar-focus-window.sh {address} {button}"
     }
+  },
+
+  "load": {
+    "interval": 5,
+    "format": "load: {load1}"
   },
   
   "pulseaudio": {
