@@ -6,7 +6,7 @@
   /* font-family: "Cantarell", "JetBrainsMono Nerd Font", monospace; */
   font-family: FontAwesome;
   font-size: 15px;
-  padding: 0px;
+  /* padding: 0px; */
   font-weight: 500;
   /* color: #e6e3ea; */
   /* transition: background 0.25s, color 0.25s; */
@@ -26,18 +26,18 @@ window#waybar {
 /* Tooltip */
 tooltip {
   background: rgba(25, 25, 35, 0.9);      /* dark semi-transparent background */
-  color: #e6e3ef;                         /* soft white text */
+  /* color: #e6e3ef; */
   border: 1px solid rgba(162, 119, 255, 0.25); /* subtle purple border */
   border-radius: 10px;                    /* rounded corners */
   padding: 12px 16px;                      /* extra padding for readability */
   font-size: 13px;
   font-weight: 500;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* soft glow below tooltip */
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); */
 }
 
 tooltip label {
   padding: 8px 12px;
-  color: #d8d3e0; /* lighter text inside tooltips */
+  /* color: #d8d3e0;  */
 }
 
 /* ---------------------------------------------------- */
@@ -46,6 +46,7 @@ tooltip label {
 
 #pulseaudio,
 #clock,
+#load,
 #battery,
 #network,
 #bluetooth,
@@ -55,7 +56,8 @@ tooltip label {
 #custom-notifications 
 {
   /* background: rgba(120, 102, 172, 0.15);  */
-  background: rgba(27, 27, 27, 0.75);
+  /* background: rgba(27, 27, 27, 0.75); */
+  background: rgba(32, 32, 32, 0.75);
   border-radius: 15px;
   padding: 0px 8px;
   margin: 0 4px;
@@ -66,6 +68,7 @@ tooltip label {
 /* Subtle hover highlight for most modules */
 #pulseaudio:hover,
 #clock:hover,
+#load:hover,
 #backlight:hover,
 #battery:hover,
 #network:hover,
@@ -76,7 +79,7 @@ tooltip label {
 #bluetooth:hover 
 {
   background: rgba(162, 119, 255, 0.35);
-  color: #fff;
+  /* color: #fff; */
 }
 
 /* ---------------------------------------------------- */
@@ -91,11 +94,11 @@ tooltip label {
   padding: 0px 8px;
   min-width: 30px;
   margin: 0px 2px;
-  color: #bfb2d0;
-  transition: all 0.3s ease;
+  /* color: #bfb2d0; */
+  /* transition: all 0.3s ease; */
   border-radius: 22px;
   border: 1px solid rgba(100, 100, 120, 0.25);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35); */
 }
 
 /* #workspaces button.active {
@@ -154,6 +157,10 @@ tooltip label {
   color: #e9ff87; 
 }
 
+#load {
+  min-width: 72px;
+}
+
 #custom-notifications {
   color: #be7cfc;
   font-size: 20px;
@@ -174,7 +181,7 @@ tooltip label {
 }
 
 #custom-netspeed {
-  min-width: 75px;
+  min-width: 76px;
 }
 
 /* ===== Power Menu Styling ===== */
