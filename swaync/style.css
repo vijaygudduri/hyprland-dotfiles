@@ -596,7 +596,7 @@ notificationwindow, blankwindow, blankwindow {
 }
 
 .widget-buttons-grid flowboxchild > button.toggle:checked {
-  background: rgba(72, 141, 245, 0.5);
+  background: rgba(72, 141, 245, 0.6);
   /* box-shadow: 0 0 6px rgba(247, 27, 229, 0.5); */
   border: 2px solid rgba(81, 150, 253, 0.50);
 }
