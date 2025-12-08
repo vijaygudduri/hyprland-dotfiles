@@ -589,7 +589,6 @@ notificationwindow, blankwindow, blankwindow {
   padding: 10px 14px;
 }
 
-
 /* --- Balance button-grid alignment & spacing --- */
 .widget-buttons-grid flowboxchild > button {
   border-radius: 25px;
@@ -604,6 +603,7 @@ notificationwindow, blankwindow, blankwindow {
 
 .widget-buttons-grid flowboxchild > button label {
   font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.80)
 }
 
 /* --- FIX: Targeted Padding for Wi-Fi and Hyprsunset Icons --- */
