@@ -1,4 +1,3 @@
-
 :root {
   --cc-bg: rgba(46, 46, 46, 0.7);
   --noti-border-color: rgba(255, 255, 255, 0.15);
@@ -590,7 +589,6 @@ notificationwindow, blankwindow, blankwindow {
   padding: 10px 14px;
 }
 
-
 /* --- Balance button-grid alignment & spacing --- */
 .widget-buttons-grid flowboxchild > button {
   border-radius: 25px;
@@ -598,13 +596,14 @@ notificationwindow, blankwindow, blankwindow {
 }
 
 .widget-buttons-grid flowboxchild > button.toggle:checked {
-  /* background: rgba(247, 252, 248, 0.25);  active bluish highlight */
-  /* box-shadow: 0 0 6px rgba(247, 27, 229, 0.5);  */
-  border: 2px solid rgba(153, 193, 253, 0.8);
+  background: rgba(72, 141, 245, 0.6);
+  /* box-shadow: 0 0 6px rgba(247, 27, 229, 0.5); */
+  border: 2px solid rgba(81, 150, 253, 0.50);
 }
 
 .widget-buttons-grid flowboxchild > button label {
   font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.80)
 }
 
 /* --- FIX: Targeted Padding for Wi-Fi and Hyprsunset Icons --- */

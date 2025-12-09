@@ -1,9 +1,13 @@
 ***Follow this after a fresh OS installation without any DE (This is tested only on CachyOS)***
 
-1.  **Install hyprland, sddm, brave and kitty**
+1.  **Install hyprland, sddm, chrome and kitty**
 
       ```bash
-      sudo pacman -S hyprland sddm kitty brave-bin; sudo systemctl enable sddm
+      sudo pacman -S hyprland sddm kitty; sudo systemctl enable sddm
+      ```
+
+      ```bash
+      paru -S google-chrome
       ```
 
 2.  **Clone the repo**
@@ -27,14 +31,14 @@
       ```bash
       cd ~/hyprland-dotfiles #cd to cloned repo
       ```
-
-      ```bash
-      cp -r hypr kitty fastfetch swaync systemd waybar nwg-drawer ~/.config/
-      ```
       
       ```bash
       cp -r wallpapers ~
       ```
+
+      ```bash
+      cp -r hypr kitty fastfetch swaync systemd waybar nwg-drawer chrome-flags.conf ~/.config/
+      ```      
 
 5.  **Make all the scripts executable**
 
@@ -85,18 +89,5 @@
       echo -e "alias ls='eza --color=always --group-directories-first --icons'\nstarship init fish | source" >> ~/.config/fish/config.fish
       ```
 
-13.  **Copy brave-browser.desktop to .local and add flags**
-
-      ```bash
-      cp /usr/share/applications/brave-browser.desktop ~/.local/share/applications/
-      ```
-
-      ```bash
-      sed -i '
-      s|^Exec=brave %U|Exec=brave --enable-features=VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE,UseOzonePlatform --ozone-platform=x11 --ignore-gpu-blocklist --enable-zero-copy --enable-gpu-rasterization --password-store=gnome %U|;
-      s|^Exec=brave$|Exec=brave --enable-features=VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE,UseOzonePlatform --ozone-platform=x11 --ignore-gpu-blocklist --enable-zero-copy --enable-gpu-rasterization --password-store=gnome|;
-      s|^Exec=brave --incognito|Exec=brave --enable-features=VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE,UseOzonePlatform --ozone-platform=x11 --ignore-gpu-blocklist --enable-zero-copy --enable-gpu-rasterization --password-store=gnome --incognito|
-      ' ~/.local/share/applications/brave-browser.desktop
-      ```
 
 ***Reboot after all the process is done***

@@ -187,11 +187,11 @@ tooltip label {
 /* ===== Power Menu Styling ===== */
 
 menu {
-  background: linear-gradient(180deg, rgba(30, 30, 45, 0.85), rgba(20, 20, 30, 0.75));
+  background: linear-gradient(180deg, rgba(30, 30, 45, 0.95), rgba(20, 20, 30, 0.95));
   border-radius: 12px;
-  border: 5px solid rgba(255, 27, 27, 0.15);
+  border: 5px solid rgba(255, 27, 27, 0.25);
   padding: 6px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
 }
 
 menuitem {
