@@ -128,10 +128,10 @@ fn_status_change() {
     # 1️⃣ Detect Plug / Unplug events
     if [[ "$battery_status" == "Discharging" && "$last_status" != "Discharging" ]]; then
         notify_battery normal "battery-level-$icon_step-symbolic" \
-            "Charger Unplugged" "You are now running on battery."
+            "Charger Unplugged" "Battery at $battery_percentage%. You are now running on battery."
     elif [[ "$battery_status" != "Discharging" && "$last_status" == "Discharging" ]]; then
         notify_battery normal "battery-level-$icon_step-plugged-in-symbolic" \
-            "Charger Plugged In" "Charging started."
+            "Charger Plugged In" "Battery at $battery_percentage%. Charging started."
     fi
 
     last_status="$battery_status"
