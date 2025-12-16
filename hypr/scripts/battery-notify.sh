@@ -172,8 +172,8 @@ fn_status_change() {
                         fi
 
                         notify_battery critical "battery-level-0-symbolic" \
-                            "Battery Critical" \
-                            "Battery under 5% — plug in immediately!"
+                            "Battery Critically Low" \
+                            "Battery at $battery_percentage% — PLUG IN IMMEDIATELY!"
 
                         sleep 2
                     done
