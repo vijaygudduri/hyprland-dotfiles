@@ -41,13 +41,13 @@
     "format-bluetooth": "{icon}   {volume}%",
     "format-muted": " Mute",
     "format-icons": {
-        "headphone": "",
-        "headset": "",
-        "default": ["", ""]
+      "headphone": "",
+      "headset": "",
+      "default": ["", ""]
     },
-    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.005-",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.005+",
-    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ -0.5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ +0.5%",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-click-right": "pavucontrol",
     "scroll-step": 0.1,
     "ignored-sinks": ["Easy Effects Sink"]
