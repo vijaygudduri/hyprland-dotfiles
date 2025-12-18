@@ -37,7 +37,7 @@
       ```
 
       ```bash
-      cp -r hypr kitty fastfetch swaync systemd waybar nwg-drawer chrome-flags.conf ~/.config/
+      cp -r hypr kitty fastfetch swaync systemd waybar nwg-drawer sys64 chrome-flags.conf ~/.config/
       ```      
 
 5.  **Make all the scripts executable**
