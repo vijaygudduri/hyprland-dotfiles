@@ -8,7 +8,7 @@
   font-size: 15px;
   /* padding: 0px; */
   font-weight: 500;
-  color: #e6e3ea;
+  color: #ebebeb;
   /* transition: background 0.25s, color 0.25s; */
   /* min-height: 0; */
 }
@@ -148,6 +148,16 @@ tooltip label {
 #battery.critical {
   color: #ff5555;
 }
+
+/* Battery charging state */
+#battery.charging {
+  color: #dddddd;
+}
+
+/* subtle glow when charging */
+/* #battery.charging {
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+} */
 
 #bluetooth {
   color: #7cfcf1;
