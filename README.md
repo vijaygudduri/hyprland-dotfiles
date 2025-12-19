@@ -95,7 +95,9 @@
       ```bash
       git clone https://github.com/System64fumo/syshud.git
       cd syshud
-      Edit src/config.hpp: replace WIREPLUMBER with PULSEAUDIO
+      
+      # replace WIREPLUMBER with PULSEAUDIO in src/config.hpp
+      sed -i 's/WIREPLUMBER/PULSEAUDIO/g' src/config.hpp
       ```
       
       ```bash
