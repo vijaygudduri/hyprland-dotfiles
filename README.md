@@ -89,5 +89,8 @@
       echo -e "alias ls='eza --color=always --group-directories-first --icons'\nstarship init fish | source" >> ~/.config/fish/config.fish
       ```
 
+13. **Compile and install syshud for osd**
+
+
 
 ***Reboot after all the process is done***
