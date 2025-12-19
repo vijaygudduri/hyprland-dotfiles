@@ -90,7 +90,25 @@
       ```
 
 13. **Compile and install syshud for osd**
+      (this is available with aur, but its using audio engine wireplumber by default, so we are compiling it with pulseaudio as wireplumber giving some issues)
 
+      ```bash
+      git clone https://github.com/System64fumo/syshud.git
+      cd syshud
+      Edit src/config.hpp: replace WIREPLUMBER with PULSEAUDIO
+      ```
+      
+      ```bash
+      # compile and install
+      make
+      sudo make install
+      
+      # As manually compiled apps will be at /usr/local/lib, adding it to the system's library search paths
+      echo "/usr/local/lib" | sudo tee /etc/ld.so.conf.d/local.conf
+      
+      # Refresh the system's library cache to recognize the new files
+      sudo ldconfig
+      ```
 
 
 ***Reboot after all the process is done***
