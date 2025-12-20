@@ -81,8 +81,8 @@
     "format-icons":["󰤟","󰤢","󰤥","󰤨"],
     "format-wifi": "{icon}   {essid} ({signalStrength}%)",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-    "format-disconnected": "󰤮   Disconnected", 
-    "tooltip-format-disconnected": "Disconnected",
+    "format-disconnected": "󰤮   Not-connected",
+    "format-disabled": "󰤮   Off",
     "max-length": 50
   },
 
