@@ -27,7 +27,7 @@
         "format": "{icon}",
         // "icon-theme": "Adwaita",
         "icon-size": 24,
-        "on-click-window": "~/.config/hypr/scripts/waybar-focus-window.sh {address} {button}"
+        "on-click-window": "~/.config/scripts/waybar-focus-window.sh {address} {button}"
     }
   },
 
@@ -104,7 +104,7 @@
   "custom/netspeed": {
     "format": "{}",
     "tooltip": false,
-    "exec": "/home/vijay/.config/hypr/scripts/custom-netspeed.sh",
+    "exec": "/home/vijay/.config/scripts/custom-netspeed.sh",
     "interval": 1
   },
 
