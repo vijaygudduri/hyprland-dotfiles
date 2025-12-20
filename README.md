@@ -60,13 +60,13 @@
       ```
 
       ```bash
-      cp -r hypr kitty fastfetch swaync systemd waybar nwg-drawer sys64 chrome-flags.conf ~/.config/
+      cp -r hypr kitty fastfetch swaync scripts systemd waybar nwg-drawer sys64 chrome-flags.conf ~/.config/
       ```      
 
 6.  **Make all the scripts executable**
 
       ```bash
-      chmod +x ~/.config/hypr/scripts/*.sh
+      chmod +x ~/.config/scripts/*.sh
       ```
 
 7.  **Apply themes from nwg-look (theme is 'catppuccin mocha' and cursor theme is 'bibata modern ice')**
