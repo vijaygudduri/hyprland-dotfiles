@@ -20,13 +20,36 @@
       paru -S --needed sddm-sugar-candy-git catppuccin-gtk-theme-mocha bibata-cursor-theme visual-studio-code-bin zoom clipvault-bin
       ```
 
-3.  **Clone the repo**
+3.  **Compile and install syshud for osd**
+      (this is available with aur, but its using audio engine wireplumber by default, so we are compiling it with pulseaudio as wireplumber giving some issues)
+
+      ```bash
+      git clone https://github.com/System64fumo/syshud.git
+      cd syshud
+      
+      # replace WIREPLUMBER with PULSEAUDIO in src/config.hpp
+      sed -i 's/WIREPLUMBER/PULSEAUDIO/g' src/config.hpp
+      ```
+      
+      ```bash
+      # compile and install
+      make
+      sudo make install
+      
+      # As manually compiled apps will be at /usr/local/lib, adding it to the system's library search paths
+      echo "/usr/local/lib" | sudo tee /etc/ld.so.conf.d/local.conf
+      
+      # Refresh the system's library cache to recognize the new files
+      sudo ldconfig
+      ```
+
+4.  **Clone the repo**
 
       ```bash
       git clone --depth=1 https://github.com/vijaygudduri/hyprland-dotfiles.git
       ```
 
-4.  **Copy the configs from cloned repo to ~/.config**
+5.  **Copy the configs from cloned repo to ~/.config**
 
       ```bash
       cd ~/hyprland-dotfiles #cd to cloned repo
@@ -40,15 +63,15 @@
       cp -r hypr kitty fastfetch swaync systemd waybar nwg-drawer sys64 chrome-flags.conf ~/.config/
       ```      
 
-5.  **Make all the scripts executable**
+6.  **Make all the scripts executable**
 
       ```bash
       chmod +x ~/.config/hypr/scripts/*.sh
       ```
 
-6.  **Apply themes from nwg-look (theme is 'catppuccin mocha' and cursor theme is 'bibata modern ice')**
+7.  **Apply themes from nwg-look (theme is 'catppuccin mocha' and cursor theme is 'bibata modern ice')**
 
-7.  **To apply sugar-candy theme on sddm, run below commands**
+8.  **To apply sugar-candy theme on sddm, run below commands**
 
       ```bash
       sudo mkdir -p /etc/sddm.conf.d ; sudo touch /etc/sddm.conf.d/sddm.conf
@@ -87,29 +110,6 @@
 
       ```bash
       echo -e "alias ls='eza --color=always --group-directories-first --icons'\nstarship init fish | source" >> ~/.config/fish/config.fish
-      ```
-
-13. **Compile and install syshud for osd**
-      (this is available with aur, but its using audio engine wireplumber by default, so we are compiling it with pulseaudio as wireplumber giving some issues)
-
-      ```bash
-      git clone https://github.com/System64fumo/syshud.git
-      cd syshud
-      
-      # replace WIREPLUMBER with PULSEAUDIO in src/config.hpp
-      sed -i 's/WIREPLUMBER/PULSEAUDIO/g' src/config.hpp
-      ```
-      
-      ```bash
-      # compile and install
-      make
-      sudo make install
-      
-      # As manually compiled apps will be at /usr/local/lib, adding it to the system's library search paths
-      echo "/usr/local/lib" | sudo tee /etc/ld.so.conf.d/local.conf
-      
-      # Refresh the system's library cache to recognize the new files
-      sudo ldconfig
       ```
 
 
