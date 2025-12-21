@@ -5,7 +5,7 @@ Wants=graphical.target
 
 [Service]
 Type=simple
-ExecStart=%h/.config/scripts/autoswitch.sh
+ExecStart=%h/.config/scripts/workspace-autoswitch.sh
 ExecStartPre=/bin/sleep 5
 Restart=always
 RestartSec=5
