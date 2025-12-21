@@ -47,8 +47,8 @@
     },
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ -0.5%",
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ +0.5%",
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-click-right": "pavucontrol",
+    "on-click": "pavucontrol",
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "scroll-step": 0.1,
     "ignored-sinks": ["Easy Effects Sink"]
   },
