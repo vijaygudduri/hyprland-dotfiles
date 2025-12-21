@@ -43,7 +43,7 @@
       sudo ldconfig
       ```
 
-4.  **Clone the repo**
+4.  **Clone the dotfiles repo**
 
       ```bash
       git clone --depth=1 https://github.com/vijaygudduri/hyprland-dotfiles.git
