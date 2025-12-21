@@ -109,7 +109,7 @@
 12.  **Add starship config and modify ls alias in fish**
 
       ```bash
-      echo -e "\nalias ls='eza --color=always --group-directories-first --icons'\n\nstarship init fish | source" >> ~/.config/fish/config.fish
+      echo -e "\n\nalias ls='eza --color=always --group-directories-first --icons'\n\nstarship init fish | source" >> ~/.config/fish/config.fish
       ```
 
 
