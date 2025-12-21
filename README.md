@@ -93,7 +93,7 @@
 
       ```bash
       systemctl --user daemon-reload
-      systemctl --user enable hypr-autoswitch.service
+      systemctl --user enable workspace-autoswitch.service
       ```
 
 10.  **To decrease boot order timeout prompt of systemd while rebooting, switch to root and change timeout to 2 (or 0 to disable completly) in /boot/loader/loader.conf**
