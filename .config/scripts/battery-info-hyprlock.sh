@@ -25,4 +25,9 @@ if [ "$battery_status" = "Charging" ]; then
 fi
 
 # Output the battery percentage and icon
-echo "$battery_icon $battery_percentage%"
+if [ "$battery_percentage" -lt 20 ]; then
+	# Show in red when battery is below 20%
+	echo "<span foreground='red'>$battery_icon $battery_percentage%</span>"
+else
+	echo "$battery_icon $battery_percentage%"
+fi
