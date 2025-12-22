@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-# Standalone Fastfetch logo helper
-# Uses logos from ~/.config/fastfetch/logo
+# Fastfetch logo helper. Uses logos from ~/.config/fastfetch/logo
 
 CONFIG_DIR="$HOME/.config/fastfetch"
 LOGO_DIR="$CONFIG_DIR/logo"
