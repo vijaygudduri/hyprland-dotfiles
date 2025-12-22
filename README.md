@@ -56,12 +56,8 @@
       ```
       
       ```bash
-      cp -r wallpapers ~
-      ```
-
-      ```bash
-      cp -r hypr kitty fastfetch swaync scripts systemd waybar nwg-drawer sys64 chrome-flags.conf ~/.config/
-      ```      
+      cp -ri wallpapers ~/ && cp -ri .config/. ~/.config/
+      ```   
 
 6.  **Make all the scripts executable**
 
