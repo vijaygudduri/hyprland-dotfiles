@@ -104,7 +104,7 @@
   "custom/netspeed": {
     "format": "{}",
     "tooltip": false,
-    "exec": "/home/vijay/.config/scripts/custom-netspeed.sh",
+    "exec": "~/.config/scripts/custom-netspeed.sh",
     "interval": 1
   },
 
