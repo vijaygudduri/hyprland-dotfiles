@@ -45,8 +45,8 @@
       "headset": "",
       "default": ["", ""]
     },
-    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ -0.5%",
-    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ +0.5%",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +0.5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -0.5%",
     "on-click": "pavucontrol",
     "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "scroll-step": 0.1,
@@ -61,7 +61,8 @@
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon}  {percent}%",
-    "format-icons": ["󰃞", "󰃟", "󰃠"]
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "scroll-step": 0.2
   },
 
   "battery": {
