@@ -62,7 +62,7 @@
 6.  **Make all the scripts executable**
 
       ```bash
-      chmod +x ~/.config/scripts/*.sh
+      chmod +x ~/.config/scripts/*.sh ~/.config/scripts/*.py
       ```
 
 7.  **Apply themes from nwg-look (theme is 'catppuccin mocha' and cursor theme is 'bibata modern ice')**
