@@ -23,4 +23,5 @@ fi
 
 notify-send -i input-keyboard -t 3000 \
   -h string:x-canonical-private-synchronous:caps \
+  -h int:transient:1 \
   "Keyboard" "$msg"
