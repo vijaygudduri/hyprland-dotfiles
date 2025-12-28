@@ -1,18 +1,26 @@
 #!/usr/bin/env python3
+import os
 import logging
+from logging.handlers import RotatingFileHandler
 import signal
 import sys
 from gi.repository import GLib
 from pydbus import SystemBus
 
 # --- Configuration ---
+LOG_FILE = os.path.expanduser("~/.cache/bluetooth-autoconnect.log")
+os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
+
 LOG_LEVEL = logging.INFO
-logging.basicConfig(
-    level=LOG_LEVEL,
-    format='%(asctime)s [%(levelname)s] %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S'
-)
+
+# Setup Rotating Logger: 20KB is roughly 300-350 lines
+# backupCount=1 keeps one old log file (.log.1) before overwriting
+handler = RotatingFileHandler(LOG_FILE, maxBytes=20000, backupCount=1)
+handler.setFormatter(logging.Formatter('%(asctime)s [%(levelname)s] %(message)s', '%Y-%m-%d %H:%M:%S'))
+
 logger = logging.getLogger("BT-Autoconnect")
+logger.setLevel(LOG_LEVEL)
+logger.addHandler(handler)
 
 bus = SystemBus()
 loop = GLib.MainLoop()
