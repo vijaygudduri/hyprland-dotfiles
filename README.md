@@ -1,4 +1,4 @@
-<img width="733" height="183" alt="image" src="https://github.com/user-attachments/assets/d96ed573-13a4-4407-88b2-1959c194b188" />***Follow this after a fresh OS installation without any DE (This is tested only on CachyOS)***
+***Follow this after a fresh OS installation without any DE (This is tested only on CachyOS)***
 
 1.  **Install hyprland, sddm, chrome and kitty**
 
