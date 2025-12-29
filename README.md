@@ -1,4 +1,4 @@
-***Follow this after a fresh OS installation without any DE (This is tested only on CachyOS)***
+<img width="733" height="183" alt="image" src="https://github.com/user-attachments/assets/d96ed573-13a4-4407-88b2-1959c194b188" />***Follow this after a fresh OS installation without any DE (This is tested only on CachyOS)***
 
 1.  **Install hyprland, sddm, chrome and kitty**
 
@@ -13,7 +13,7 @@
 2.  **Install necessaries**
 
       ```bash      
-      sudo pacman -S --needed nwg-drawer nwg-look waybar swaync polkit-gnome gnome-keyring xdg-desktop-portal-hyprland hypridle hyprlock hyprpaper wl-clipboard socat jq starship network-manager-applet gnome-calculator gnome-text-editor gnome-clocks blueman nautilus libreoffice-fresh telegram-desktop transmission-gtk smplayer swappy evince brightnessctl hyprpicker hyprsunset cachyos-kernel-manager grimblast python-pydbus python-gobject
+      sudo pacman -S --needed nwg-drawer nwg-look waybar swaync polkit-gnome gnome-keyring xdg-desktop-portal-hyprland hypridle hyprlock hyprpaper wl-clipboard socat jq starship network-manager-applet gnome-calculator gnome-text-editor gnome-clocks blueman nautilus libreoffice-fresh telegram-desktop transmission-gtk smplayer swappy evince brightnessctl hyprpicker hyprsunset cachyos-kernel-manager grimblast python-pydbus python-gobject python-dbus-next
       ```
 
       ```bash
