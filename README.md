@@ -85,7 +85,7 @@
       EOF"
       ```
 
-9.  **For workspace autoswitch functionality, enable the service**
+9.  **For workspace autoswitch functionality, enable the service (ignore this, as we are using python script with exec-once)**
 
       ```bash
       systemctl --user daemon-reload
