@@ -46,12 +46,10 @@ tooltip label {
 
 #pulseaudio,
 #clock,
-#load,
 #battery,
 #network,
 #bluetooth,
 #backlight,
-#custom-power,
 #custom-netspeed,
 #custom-notifications 
 {
@@ -68,13 +66,11 @@ tooltip label {
 /* Subtle hover highlight for most modules */
 #pulseaudio:hover,
 #clock:hover,
-#load:hover,
 #backlight:hover,
 #battery:hover,
 #network:hover,
 #backlight:hover,
 #custom-notifications:hover,
-/* #custom-power:hover, */
 #workspaces button:hover,
 #bluetooth:hover 
 {
@@ -180,39 +176,6 @@ tooltip label {
   padding-right: 12px;      /* fixes icon slightly leaning towards right */
 }
 
-/* Power button styling */
-#custom-power {
-  color: rgb(255, 47, 47);
-  font-size: 23px;
-  /* transition: background 0.2s; */
-  /* padding: 0px 15px; */
-  min-width: 25px;
-  padding-right: 10px;      /* fixes icon slightly leaning towards right */
-}
-
 #custom-netspeed {
   min-width: 76px;
-}
-
-/* ===== Power Menu Styling ===== */
-
-menu {
-  background: linear-gradient(180deg, rgba(30, 30, 45, 0.95), rgba(20, 20, 30, 0.95));
-  border-radius: 12px;
-  border: 5px solid rgba(255, 27, 27, 0.25);
-  padding: 6px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
-}
-
-menuitem {
-  padding-top: 10px; 
-  padding-bottom: 10px;
-  color: #d8d3e0;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-}
-
-menuitem:hover {
-  background-color: rgba(162, 119, 255, 0.2);
-  color: #ffffff;
 }
