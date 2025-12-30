@@ -1,3 +1,4 @@
+
 :root {
   --cc-bg: rgba(46, 46, 46, 0.7);
   --noti-border-color: rgba(255, 255, 255, 0.15);
@@ -619,23 +620,23 @@ notificationwindow, blankwindow, blankwindow {
     padding-right: 3px;
 }
 
-
 /* =========================================================
    Force equal button size for ALL buttons-grid buttons
    ========================================================= */
 
 /* Actual button */
 .widget-buttons-grid flowboxchild > button {
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 30px;
+  min-height: 30px;
   padding: 0;
-  border-radius: 25px;
+  border-radius: 999px;
 }
 
 /* Toggle buttons (checked / unchecked) */
 .widget-buttons-grid flowboxchild > button.toggle {
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 999px;
 }
 
 /* Target the first 4 buttons (System Actions) in the grid */
