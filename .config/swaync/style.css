@@ -640,6 +640,6 @@ notificationwindow, blankwindow, blankwindow {
 
 /* Target the first 4 buttons (System Actions) in the grid */
 .widget-buttons-grid flowboxchild:nth-child(-n+4) > button {
-    background: #3b4f4f; /* Standard Cyan */
-    border: 2px solid rgba(70, 115, 105, 0.5);
+    background: rgba(153, 146, 63, 0.6);
+    border: 2px solid rgba(153, 146, 63, 0.5);
 }
