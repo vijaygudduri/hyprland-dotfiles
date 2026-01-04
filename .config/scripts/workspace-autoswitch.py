@@ -7,6 +7,7 @@ import logging
 from logging.handlers import RotatingFileHandler # Added for efficient log rotation
 import signal
 import sys
+import fcntl # Added for robust kernel-level file locking
 from pathlib import Path
 from datetime import datetime
 
@@ -35,35 +36,46 @@ class HyprAutoswitch:
         # This event allows us to shut down the script cleanly from anywhere
         self.stop_event = asyncio.Event()
         
-        # Ensure only one instance runs
+        # Keep a reference to the file object to prevent it from being garbage collected (which releases the lock)
+        self.lock_file = None
+        
+        # Ensure only one instance runs - MUST happen after logging setup
         self.handle_pid_lock()
 
     def handle_pid_lock(self):
-        """Robust PID locking using atomic file creation (O_EXCL)."""
+        """Robust PID locking using kernel-level flock. 
+        Automatically handles stale PIDs and reboots."""
         try:
-            # os.O_EXCL makes the open call fail if the file already exists (atomic)
-            fd = os.open(self.pid_path, os.O_CREAT | os.O_WRONLY | os.O_EXCL)
-            with os.fdopen(fd, 'w') as f:
-                f.write(str(os.getpid()))
-        except FileExistsError:
+            # Open file in append mode so we don't truncate it before checking the lock
+            self.lock_file = open(self.pid_path, 'a+')
+            
+            # Try to acquire an exclusive lock (LOCK_EX) without blocking (LOCK_NB)
+            fcntl.flock(self.lock_file, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            
+            # If we reach here, we have the lock. Now we write our PID.
+            self.lock_file.seek(0)
+            self.lock_file.truncate()
+            self.lock_file.write(str(os.getpid()))
+            self.lock_file.flush()
+            
+        except (IOError, BlockingIOError):
+            # If the lock is held by someone else, read their PID for the message
             try:
-                # If file exists, check if the PID inside is actually a running process
-                old_pid = int(self.pid_path.read_text().strip())
-                os.kill(old_pid, 0) # Sending signal 0 checks existence without killing
-                print(f"Autoswitch already running (PID {old_pid}). Exiting.")
-                sys.exit(0)
-            except (OSError, ValueError):
-                # PID is dead or file is corrupt; remove it and try lock again
-                self.pid_path.unlink(missing_ok=True)
-                self.handle_pid_lock()
+                self.lock_file.seek(0)
+                old_pid = self.lock_file.read().strip()
+            except:
+                old_pid = "Unknown"
+            
+            # LOGGING THE ERROR BEFORE EXITING:
+            # This ensures that even if started by exec-once, you see why it failed in the log.
+            self.log(f"STARTUP ERROR: Autoswitch already running (Locked by PID {old_pid}). Exiting.")
+            sys.exit(0)
 
     def log(self, message):
         """Log messages using the RotatingFileHandler (automatically keeps file size small)."""
         try:
-            # Forward the message to our new logger object
             self.logger.info(message)
         except Exception as e:
-            # Fallback to print if logging itself fails
             print(f"Logging error: {e}")
 
     async def get_hypr_data(self, command):
@@ -197,6 +209,9 @@ class HyprAutoswitch:
     def cleanup(self):
         """Cleanup logic called on exit."""
         if self.pid_path.exists():
+            # Closing the file handle and unlinking will release the flock
+            if self.lock_file:
+                self.lock_file.close()
             self.pid_path.unlink()
         self.log("Autoswitch service stopped cleanly.")
 
