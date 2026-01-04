@@ -643,3 +643,14 @@ notificationwindow, blankwindow, blankwindow {
     background: rgba(153, 146, 63, 0.6);
     border: 2px solid rgba(153, 146, 63, 0.5);
 }
+
+/* 1. Add transition to the base state to make the release smooth */
+.widget-buttons-grid flowboxchild > button {
+    transition: background 0.2s ease, transform 0.1s ease-out, border 0.2s ease;
+}
+
+/* 2. Define the 'Clicked' (Active) animation for the grid buttons */
+.widget-buttons-grid flowboxchild > button:active {
+    /* Slightly shrink the button */
+    transform: scale(0.88); 
+}
