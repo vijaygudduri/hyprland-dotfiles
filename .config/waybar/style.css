@@ -44,7 +44,7 @@ tooltip label {
 /* Common Module Styling (Pill Shape) */
 /* ---------------------------------------------------- */
 
-#pulseaudio,
+#wireplumber,
 #clock,
 #battery,
 #network,
@@ -64,7 +64,7 @@ tooltip label {
 }
 
 /* Subtle hover highlight for most modules */
-#pulseaudio:hover,
+#wireplumber:hover,
 #clock:hover,
 #backlight:hover,
 #battery:hover,
@@ -117,7 +117,7 @@ tooltip label {
 
 /* Specific module colors */
 
-#pulseaudio {
+#wireplumber {
   color: #74d6fd; /* Light blue */
 }
 
