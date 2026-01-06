@@ -29,24 +29,25 @@ MESSAGES = {
     "CRITICAL_THRESHOLD": 5,
 
     # --- STATUS CHANGE EVENTS ---
-    # Example using padded {0} (080 format)
-    "PLUGGED":   ("Charger Plugged In", "Battery at {}%. Charging started.", "battery-{0}-charging", "normal"),
-    "UNPLUGGED": ("Charger Unplugged", "Battery at {}%. Running on battery.", "battery-{0}-symbolic", "normal"),
+    # Example using padded {0} (080 format) --> battery-level-{0}-symbolic
+    # Example using padded {1} (80 format) --> battery-level-{1}-symbolic
+    "PLUGGED":   ("Charger Plugged In", "Battery at {}%. Charging started.", "battery-level-{1}-plugged-in-symbolic", "normal"),
+    "UNPLUGGED": ("Charger Unplugged", "Battery at {}%. Running on battery.", "battery-level-{1}-symbolic", "normal"),
 
     # --- REPEATING CRITICAL ALERT ---
     "CRITICAL_LOOP": ("Battery Critically Low", "Battery at {}% — PLUG IN IMMEDIATELY!", "battery-000-symbolic", "critical"),
 
     # --- DISCHARGING LEVELS (Status 2) ---
-    (2, 20): ("Battery Low", "Battery at 20% — consider plugging in.", "battery-020-symbolic", "critical"),
-    (2, 15): ("Battery Low", "Battery at 15% — low power.", "battery-010-symbolic", "critical"),
-    (2, 10): ("Battery Low", "Battery at 10% — critically low.", "battery-000-symbolic", "critical"),
+    (2, 20): ("Battery Low", "Battery at 20% — consider plugging in.", "battery-level-20-symbolic", "critical"),
+    (2, 15): ("Battery Low", "Battery at 15% — low power.", "battery-level-10-symbolic", "critical"),
+    (2, 10): ("Battery Low", "Battery at 10% — critically low.", "battery-level-0-symbolic", "critical"),
     
     # --- CHARGING LEVELS (Status 1) ---
-    (1, 80): ("Battery Charged", "Battery at 80% — good time to unplug.", "battery-080-charging", "normal"),
-    (1, 85): ("Battery Charged", "Battery at 85% - unplug please", "battery-080-charging", "normal"),
-    (1, 90): ("Battery Charged", "Battery at 90% - unplug the cable", "battery-090-charging", "normal"),
-    (1, 95): ("Battery Charged", "Battery at 95% - lets remove the cord", "battery-090-charging", "normal"),
-    (1, 100):("Battery Charged", "Battery fully charged - Please unplug", "battery-100-charging", "normal"),
+    (1, 80): ("Battery Charged", "Battery at 80% — good time to unplug.", "battery-level-80-charging-symbolic", "normal"),
+    (1, 85): ("Battery Charged", "Battery at 85% - unplug please", "battery-level-80-charging-symbolic", "normal"),
+    (1, 90): ("Battery Charged", "Battery at 90% - unplug the cable", "battery-level-90-charging-symbolic", "normal"),
+    (1, 95): ("Battery Charged", "Battery at 95% - lets remove the cord", "battery-level-90-charging-symbolic", "normal"),
+    (1, 100):("Battery Charged", "Battery fully charged - Please unplug", "battery-level-100-charged-symbolic", "normal"),
 }
 
 # ──────────────────────────────── CORE LOGIC ────────────────────────────────
