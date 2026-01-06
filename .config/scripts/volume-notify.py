@@ -41,7 +41,7 @@ def notify(vol):
 
     subprocess.run([
         "notify-send",
-        "-t", "2000",
+        "-t", "3000",
         "-h", "int:transient:1",
         "-h", "string:x-canonical-private-synchronous:volume",
         "-i", icon,
