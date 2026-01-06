@@ -20,29 +20,6 @@
       paru -S --needed sddm-sugar-candy-git catppuccin-gtk-theme-mocha bibata-cursor-theme visual-studio-code-bin zoom clipvault-bin
       ```
 
-3.  **Compile and install syshud for osd**
-      (this is available with aur, but its using audio engine wireplumber by default, so we are compiling it with pulseaudio as wireplumber giving some issues)
-
-      ```bash
-      git clone https://github.com/System64fumo/syshud.git
-      cd syshud
-      
-      # replace WIREPLUMBER with PULSEAUDIO in src/config.hpp
-      sed -i 's/WIREPLUMBER/PULSEAUDIO/g' src/config.hpp
-      ```
-      
-      ```bash
-      # compile and install
-      make
-      sudo make install
-      
-      # As manually compiled apps will be at /usr/local/lib, adding it to the system's library search paths
-      echo "/usr/local/lib" | sudo tee /etc/ld.so.conf.d/local.conf
-      
-      # Refresh the system's library cache to recognize the new files
-      sudo ldconfig
-      ```
-
 4.  **Clone the dotfiles repo**
 
       ```bash
