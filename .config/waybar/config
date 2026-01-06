@@ -10,8 +10,8 @@
 
   // --- Module Layout ---
 
-  "modules-left": ["backlight","pulseaudio", "hyprland/workspaces"],
-  "modules-center": ["battery", "clock"],
+  "modules-left": ["wireplumber", "hyprland/workspaces"],
+  "modules-center": ["battery", "clock", "backlight"],
   "modules-right": ["custom/netspeed", "bluetooth", "custom/notifications", "network", "custom/power"],
 
   // --- Module Definitions ---
@@ -31,7 +31,7 @@
     }
   },
   
-  "pulseaudio": {
+  "wireplumber": {
     "format": "{icon} {volume}%",
     "format-bluetooth": "{icon}   {volume}%",
     "format-muted": " Mute",
@@ -40,10 +40,10 @@
       "headset": "",
       "default": ["", ""]
     },
-    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +0.5%",
-    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -0.5%",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.5%-",
     "on-click": "pavucontrol",
-    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "scroll-step": 0.1,
     "ignored-sinks": ["Easy Effects Sink"]
   },
