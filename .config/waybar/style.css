@@ -117,7 +117,7 @@ tooltip label {
 
 /* Specific module colors */
 
-#wireplumber {
+#backlight {
   color: #74d6fd; /* Light blue */
 }
 
@@ -125,7 +125,7 @@ tooltip label {
   color: #fd78d5; /* White */
 }
 
-#backlight {
+#wireplumber {
   color: #bbfd6f; /* Light green */
 }
 
