@@ -17,7 +17,7 @@
       ```
 
       ```bash
-      paru -S --needed sddm-sugar-candy-git catppuccin-gtk-theme-mocha bibata-cursor-theme visual-studio-code-bin zoom clipvault-bin
+      paru -S --needed sddm-sugar-candy-git catppuccin-gtk-theme-mocha bibata-cursor-theme visual-studio-code-bin zoom clipvault-bin tela-icon-theme
       ```
 
 4.  **Clone the dotfiles repo**
