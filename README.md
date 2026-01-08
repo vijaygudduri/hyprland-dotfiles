@@ -13,11 +13,11 @@
 2.  **Install necessaries**
 
       ```bash      
-      sudo pacman -S --needed nwg-drawer nwg-look waybar swaync polkit-gnome gnome-keyring xdg-desktop-portal-hyprland hypridle hyprlock hyprpaper wl-clipboard socat jq starship network-manager-applet gnome-calculator gnome-text-editor gnome-clocks blueman nautilus onlyoffice-bin telegram-desktop transmission-gtk smplayer swappy evince brightnessctl hyprpicker hyprsunset cachyos-kernel-manager grimblast python-pydbus python-gobject python-dbus-next
+      sudo pacman -S --needed --noconfirm nwg-drawer nwg-look waybar swaync polkit-gnome gnome-keyring xdg-desktop-portal-hyprland hypridle hyprlock hyprpaper wl-clipboard socat jq starship network-manager-applet gnome-calculator gnome-text-editor gnome-clocks blueman nautilus onlyoffice-bin telegram-desktop transmission-gtk smplayer swappy evince brightnessctl hyprpicker hyprsunset cachyos-kernel-manager grimblast python-pydbus python-gobject python-dbus-next
       ```
 
       ```bash
-      paru -S --needed sddm-sugar-candy-git catppuccin-gtk-theme-mocha bibata-cursor-theme visual-studio-code-bin zoom clipvault-bin tela-icon-theme
+      paru -S --needed --noconfirm sddm-sugar-candy-git catppuccin-gtk-theme-mocha bibata-cursor-theme visual-studio-code-bin zoom clipvault-bin tela-icon-theme
       ```
 
 4.  **Clone the dotfiles repo**
