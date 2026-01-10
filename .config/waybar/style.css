@@ -50,7 +50,6 @@ tooltip label {
 #network,
 #bluetooth,
 #backlight,
-#custom-netspeed,
 #custom-notifications 
 {
   /* background: rgba(120, 102, 172, 0.15);  */
@@ -163,7 +162,7 @@ tooltip label {
   color: #e9ff87; 
 }
 
-#load {
+#network.speed {
   min-width: 72px;
 }
 
@@ -174,8 +173,4 @@ tooltip label {
   /* padding: 0px 15px; */
   min-width: 25px;
   padding-right: 12px;      /* fixes icon slightly leaning towards right */
-}
-
-#custom-netspeed {
-  min-width: 76px;
 }
